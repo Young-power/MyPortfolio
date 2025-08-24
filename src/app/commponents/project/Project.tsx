@@ -24,7 +24,7 @@ const Project = () => {
                         <Image src={"/assets/figma.png"} alt='project phone' width={500} height={500} className='w-full h-auto lg:w-[450px] rounded-4xl' />
 
                     </div>
-                    <span className='text-center font-bold '>Réalisé avec FIgma</span>
+                    <span className='text-center font-bold '>Réalisé avec Figma</span>
                 </div>
 
             </div>

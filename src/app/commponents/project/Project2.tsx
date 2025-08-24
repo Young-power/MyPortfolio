@@ -1,7 +1,7 @@
 import Image from "next/image"
 const Project2 = () => {
     return (
-        <div className='w-full grid grid-cols-1  lg:grid-cols-2 mt-24   justify-center items-center'>
+        <div className='w-full grid grid-cols-1  lg:grid-cols-2 mt-24 mb-7  justify-center items-center'>
             <div className='text-white flex flex-col  justify-center items-center'>
                 <h1 className='text-center text-xl font-bold italic underline underline-offset-4 lg:text-4xl mb-3'>Projet Réalisé Au cours de l&apos;année scolaire</h1>
                 <p className="w-full text-sm md:text-md sm:text-wrap text-center lg:text-wrap text-white lg:px-10 lg:text-2xl lg:text-justify ">
@@ -16,17 +16,18 @@ const Project2 = () => {
 
                 </p>
                 <div className='mt-7 space-y-3 flex flex-col justify-center items-center'>
-                    <p className=' w-fit border-b-2 py-2 rounded-4xl text-center text-xl lg:text-2xl  font-bold italic '>TECHNOLOGIE UTILISEE</p>
+                    <p className=' w-fit border-b-2 py-2 rounded-4xl text-center text-xl lg:text-2xl  font-bold italic '>TECHNOLOGIES UTILISEES</p>
                     <div className="grid grid-cols-1 md:grid-cols-3 bg-white p-10 rounded-4xl ">
                         <Image src="/assets/html1.png" alt="legend" width={150} height={150} className=" object-cover " />
                         <Image src="/assets/css.png" alt="legend" width={150} height={150} className=" object-cover " />
                         <Image src="/assets/js.png" alt="legend" width={150} height={150} className=" object-cover " />
 
                     </div>
-                    <span className='text-center font-bold '>Réalisé avec FIgma</span>
+                    <span className='text-center font-bold '>Réalisé avec HTML, CSS ,JS</span>
                 </div>
 
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2  gap-x-7 gap-y-16 justify-items-center">
                 <Image src="/assets/pro1.png" alt="project phone" width={384} height={256} className="rounded-md" />
                 <Image src="/assets/pro4.png" alt="project phone" width={384} height={256} className="rounded-md" />
