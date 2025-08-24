@@ -15,8 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "My portfolio",
+  title: "Mahine.com",
   description: "this porfolio is created to show all my skills",
+  icons: {
+    icon: "/assets/Mahine.jpg", // <--- chemin vers ton logo
+  },
 };
 
 export default function RootLayout({
