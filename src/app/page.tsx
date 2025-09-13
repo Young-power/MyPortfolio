@@ -3,7 +3,7 @@ import Hero from "./commponents/hero/Hero";
 import MyMapWrapper from "./commponents/map/MyMapWrapper";
 import Project from "./commponents/project/Project";
 import Project2 from "./commponents/project/Project2";
-import SchoolSection from "./commponents/school/SchoolSection";
+import SchoolCarieer from "./commponents/school/SchoolCarieer";
 import SkillSender from "./commponents/skills/SkillSender";
 import Title from "./commponents/Title";
 
@@ -15,7 +15,7 @@ export default function Home() {
       <Title title="COMPETANCES" style="text-white text-center text-3xl lg:text-5xl mt-28" />
       <SkillSender />
       <Title title="SCHOOL CARIEER" style="text-white text-center text-3xl lg:text-5xl mt-20" />
-      <SchoolSection />
+      <SchoolCarieer />
       <Title title="PROJETS" style="text-white text-center text-3xl lg:text-5xl mt-28 border-b-2 border-white pb-3" />
       <Project />
       <Project2 />

@@ -1,4 +1,4 @@
-const SchoolSection = () => {
+const SchoolCarieer = () => {
     return (
         <div className='w-full justify-center items-center flex  my-7'>
 
@@ -14,4 +14,4 @@ const SchoolSection = () => {
     )
 }
 
-export default SchoolSection
+export default SchoolCarieer
