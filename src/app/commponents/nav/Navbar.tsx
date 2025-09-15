@@ -5,6 +5,7 @@ import NavbarLaptop from "./NavbarLaptop"
 import NavbarPhone from "./NavbarPhone"
 import { CgClose } from "react-icons/cg";
 import { FaCode } from "react-icons/fa6";
+import Image from "next/image";
 const Navbar = () => {
 
 
@@ -14,16 +15,18 @@ const Navbar = () => {
 
     const handleShowNavbar = (): void => {
         SetShadowNav(!shadowNav);
-    }
+    };
+    const urlImg = "/assets/fire.png";
 
 
     return (
         <header className='w-full  grid grid-cols-1  lg:px-42  bg-gradient-to-br from-stone-900 to-stone-950 text-white py-5 lg:py-10  '>
-         
+
             <div className="w-full flex lg:flex-col justify-between lg:justify-center items-center px-7">
-                <div className="flex flex-col justify-center items-center font-bold italic">
+                <div className="flex flex-col  justify-center items-center font-bold italic ">
                     <span>Mahine_K</span>
-                    <FaCode  className="text-4xl"/>
+                    <FaCode className="text-4xl" />
+                    <Image src={urlImg} width={50} height={50} alt="fire" className="w-16 lg:w-12" />
                 </div>
                 <div className=" lg:hidden">
                     {
