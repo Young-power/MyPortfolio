@@ -45,6 +45,7 @@ export default function About() {
           {skills.map((skill) => (
             <div key={skill.title} className="bg-gradient-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg flex flex-col items-center">
               {skill.icon}
+              
               <h3 className="text-xl font-bold mt-3">{skill.title}</h3>
               <div className="w-full bg-gray-700 rounded-full h-4 mt-2">
                 <div
@@ -52,6 +53,7 @@ export default function About() {
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
+              
               <span className="mt-2 text-gray-300">{skill.level}%</span>
             </div>
           ))}
