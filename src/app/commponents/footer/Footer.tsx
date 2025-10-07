@@ -6,8 +6,30 @@ import { PiCopyright } from "react-icons/pi";
 import { FaReact } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { SiTailwindcss } from "react-icons/si";
+import { useEffect, useState } from 'react';
 const Footer = () => {
     const year = new Date().getFullYear();
+    const [version, setVersion] = useState<string>("");
+
+    useEffect(() => {
+
+        getVersion();
+    }, [])
+
+    const getVersion = async () => {
+
+        try {
+            const res = await fetch("../../api/version");
+            const data = await res.json();
+            setVersion(data.version)
+
+        } catch (error) {
+
+            console.log(`Erreur de la récuperation de la version: ${error}`)
+
+        }
+
+    }
 
 
 
@@ -34,7 +56,9 @@ const Footer = () => {
 
 
                     {/*laptop*/}
-                    <span className='hidden lg:flex text-lg text-nowrap'>Mahine_K — Codé avec React & TypeScript & Tailwind ⚡</span>
+                    <div className='hidden lg:flex text-lg text-nowrap'>Mahine_K — Codé avec React & TypeScript & Tailwind </div>
+                    <code className='lg:block'>v{version}⚡</code>
+
                 </div>
             </div>
 
