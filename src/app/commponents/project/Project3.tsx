@@ -25,7 +25,7 @@ const Project3 = () => {
                         </div>
                         <div className='flex flex-col justify-center items-center mt-7 gap-y-1'>
                             <FaGithub className='text-white text-5xl ml-2 cursor-pointer animate-bounce duration-1000' />
-                            <button className="btn btn-primary border px-3 lg:px-5 py-0.5 text-white text-nowrap  rounded-4xl ">
+                            <button className="btn btn-outline border px-3 lg:px-5 py-0.5 text-white text-nowrap  rounded-4xl ">
                                 <Link href={"https://github.com/Young-power/whatsapp_ReactNative.git"} className='rounded-4xl' > Voir le code <FaCode className='inline-block' /></Link>
                             </button>
                             <p className="mt-2 text-sm opacity-80 text-nowrap">Consultez le repo sur GitHub</p>
