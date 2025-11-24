@@ -41,7 +41,6 @@ const Hero = () => {
                     <div className="flex flex-row lg:flex-col justify-center items-center space-x-3 lg:space-y-3 ">
                         <div className=" rounded-full  p-1 border-4 border-yellow-400">
                             <Image src="/assets/Mahine.jpg" alt="legend" width={200} height={100} className=" object-cover lg:w-96 rounded-full  " />
-
                         </div>
                         <SocialMedia />
                     </div>

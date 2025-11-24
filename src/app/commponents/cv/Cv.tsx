@@ -1,7 +1,36 @@
+'use client';
 import Image from 'next/image'
 import { FaFilePdf } from 'react-icons/fa';
 import { IoMdDownload } from "react-icons/io";
+import {toast} from 'react-toastify'
 const Cv = () => {
+    const handleDownload = async ()=>{
+
+        try {
+            const res = await fetch("/assets/files/myCv.pdf");
+
+            if(!res.ok) throw new Error('Impossible de récupérer le fichier');
+
+            const blob = await res.blob();
+         
+            
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+
+            a.href = url
+            a.download= "mahine_cv.pdf";
+            a.click();
+            
+            window.URL.revokeObjectURL(url);
+            toast.success('Téléchargement réuissi !');
+            
+        } catch (error) {
+
+            toast.error('Erreur : le téléchargement a échoué !');
+            
+        }
+
+    }
     return (
         <div className='w-full flex flex-col justify-center items-center mt-16'>
             <div className='w-96 h-[500px] p-10 rounded-4xl flex flex-col justify-center items-center gap-7 bg-gradient-to-br from-slate-800 to-slate-950  border border-white'>
@@ -14,16 +43,15 @@ const Cv = () => {
                         className="object-cover w-96 h-96 pb-32 md:pb-0 md:pt-[2px] bg-white"
                     />
                 </div>
-                <a
-                    href={"/assets/files/myCv.pdf"}
-                    download={"cv.pdf"}
+                <button
+                    onClick={handleDownload}
                     className="bg-gradient-to-tl from-blue-600 to-blue-800 text-white text-md lg:text-xl px-5 py-3 rounded-4xl cursor-pointer inline-flex items-center gap-2 transition-transform hover:translate-y-1 duration-300 ease-in-out"
                 >
                     <FaFilePdf size={25} className="text-red-400" />
                     Télécharger mon CV
                     <IoMdDownload size={30} className="text-white rounded-full" />
 
-                </a>
+                </button>
                 <p className="text-white text-sm lg:text-md italic">
                     Un aperçu complet de mon parcours et de mes compétences.
                 </p>
