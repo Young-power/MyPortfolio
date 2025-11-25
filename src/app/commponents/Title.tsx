@@ -1,12 +1,15 @@
 import React from 'react'
+import TextMotion from './motion/TextMotion';
 
 type TitleProps = {
-    title:string;
-    style: string;
+  title: string;
+  style: string;
 }
-const Title = ({title, style}:TitleProps) => {
+const Title = ({ title, style }: TitleProps) => {
   return (
-    <p className={`${style}`}>{title}</p>
+    <TextMotion delay={0.2}>
+      <p className={`${style}`}>{title}</p>
+    </TextMotion>
   )
 }
 

@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image"
 import SocialMedia from "../socialMedia/SocialMedia"
+import TextMotion from "../motion/TextMotion"
 const Hero = () => {
     return (
         <div className="w-full  py-3">
@@ -45,7 +46,10 @@ const Hero = () => {
                         <SocialMedia />
                     </div>
                     <div className=" flex flex-col items-center justify-center lg:mr-5">
-                        <span className=" italic text-3xl lg:text-4xl   font-bold bg-gradient-to-r from-white via-yellow-500 to-yellow-600 bg-clip-text text-transparent lg:text-nowrap">Mahaman Kamagaté</span>
+                        <TextMotion delay={0.2}>
+                            <span className=" italic text-3xl lg:text-4xl   font-bold bg-gradient-to-r from-white via-yellow-500 to-yellow-600 bg-clip-text text-transparent lg:text-nowrap">Mahaman Kamagaté</span>
+
+                        </TextMotion>
                         <Image src="/assets/coffe.png" alt="legend" width={150} height={150} className=" object-cover md:w-md lg:w-32  " />
                     </div>
                 </div>
