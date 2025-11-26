@@ -2,39 +2,11 @@
 import Image from "next/image"
 import SocialMedia from "../socialMedia/SocialMedia"
 import TextMotion from "../motion/TextMotion"
+import LogoLanguage from "./LogoLanguage"
 const Hero = () => {
     return (
         <div className="w-full  py-3">
-
-            <div className="flex relative w-full justify-center space-x-2  py-7">
-                <div>
-                    <Image src="/assets/python.png" alt="legend" width={150} height={150} className=" object-cover rounded-4xl " />
-
-                </div>
-
-                <div>
-                    <Image src="/assets/next.png" alt="legend" width={150} height={150} className=" bg-white rounded-full object-cover r " />
-
-                </div>
-                <div>
-                    <Image src="/assets/linux.jpeg" alt="legend" width={150} height={150} className=" bg-white rounded-full object-cover " />
-
-                </div>
-                <div>
-                    <Image src="/assets/nest.png" alt="legend" width={150} height={150} className=" w-52 object-cover " />
-
-                </div>
-                <div>
-                    <Image src="/assets/react.png" alt="legend" width={150} height={150} className=" object-cover " />
-
-                </div>
-                <div>
-                    <Image src="/assets/js.png" alt="legend" width={150} height={150} className=" object-cover " />
-
-                </div>
-
-
-            </div>
+            <LogoLanguage />
 
             {/* Hero*/}
             <div className="flex w-full flex-col lg:flex-row justify-between  rounded-3xl sm:px-16 lg:px-20 pt-10 border-b-2 border-white">
