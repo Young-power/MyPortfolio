@@ -1,3 +1,4 @@
+import CircleContainer from "./commponents/circle/CircleContainer";
 import ButtonTop from "./commponents/goTop/ButtonTop";
 import Hero from "./commponents/hero/Hero";
 import MyMapWrapper from "./commponents/map/MyMapWrapper";
@@ -16,13 +17,12 @@ export default function Home() {
       <ButtonTop />
       <Title title="COMPETANCES" style="text-white text-center text-3xl lg:text-5xl mt-28" />
       <SkillSender />
+      <CircleContainer />
       <Title title="SCHOOL CARIEER" style="text-white text-center text-3xl lg:text-5xl mt-20" />
       <SchoolCarieer />
       <Title title="PROJETS" style="text-white text-center text-3xl lg:text-5xl mt-28 border-b-2 border-white pb-3" />
 
       <Title title="Projet Web" style="text-white text-center text-xl lg:text-2xl mt-16  border-white pb-3" />
-
-
       <Project />
       <Project2 />
       <Project3 />

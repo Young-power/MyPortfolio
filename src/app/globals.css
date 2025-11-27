@@ -35,6 +35,5 @@ html {
 .tippy-box[data-theme~='custom'] {
   background-color: #3b82f6; /* vert Tailwind : emerald-500 */
   color: white; /* texte blanc */
-  font-weight: 600;
   border-radius: 0.5rem; /* arrondi comme tailwind rounded */
 }
