@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import CardMotion from "@/app/commponents/motion/CardMotion";
 import { useTheme } from "next-themes";
 import { BsLightbulbFill, BsLightbulbOffFill } from "react-icons/bs";
-import { toast, ToastContainer } from "react-toastify";
+import { toast} from "react-toastify";
 // import { sleep } from "@/util/sleep"; // optionnel
 
 const ThemeToggle = () => {
@@ -28,13 +28,13 @@ const ThemeToggle = () => {
     );
 
   const isDark = theme === "dark";
+
   const message = () => {
     toast.info('This option is not available for now.');
   }
   return (
     <button onClick={() => setTheme(isDark ? "light" : "dark")} className="p-2">
-      <ToastContainer position='top-center' />
-
+     
       {isDark ? (
         <CardMotion delay={0.2}>
           <BsLightbulbOffFill className="text-gray-300 text-2xl md:text-3xl cursor-pointer" />

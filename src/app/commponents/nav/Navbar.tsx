@@ -8,6 +8,7 @@ import { FaCode } from "react-icons/fa6";
 import Image from "next/image";
 import TextMotion from "../motion/TextMotion";
 import ThemeToggle from "@/context/ThemeToggle";
+import { ToastContainer } from "react-toastify";
 const Navbar = () => {
 
 
@@ -24,7 +25,13 @@ const Navbar = () => {
 
     return (
         <header className='w-full  relative dark:bg-white    grid grid-cols-1  lg:px-42  bg-linear-to-br from-stone-900 to-stone-950 text-white  py-5 lg:py-10  '>
-
+ <ToastContainer 
+        position="top-center"
+        autoClose={3000}
+        pauseOnHover={false}
+        draggable={false}
+        theme="dark"
+      />
             <div className="w-full flex lg:flex-col justify-between lg:justify-center items-center px-7">
 
                 <TextMotion delay={0.2}>
