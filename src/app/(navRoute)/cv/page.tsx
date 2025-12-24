@@ -4,8 +4,12 @@ import { ToastContainer } from 'react-toastify'
 const page = () => {
   return (
     <div className=' relative min-h-screen  flex justify-center items-center'>
-      <ToastContainer position='top-center'  />
-      <Cv />
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        pauseOnHover={false}
+        draggable={false}
+      />      <Cv />
 
     </div>
   )
