@@ -12,7 +12,7 @@ import Title from "./commponents/Title";
 
 export default function Home() {
   return (
-    <div className="w-full bg-gradient-to-br from-stone-900 to-stone-950 h-full">
+    <div className="w-full bg-linear-to-br from-stone-900 to-stone-950 h-full   ">
       <Hero />
       <ButtonTop />
       <Title title="COMPETANCES" style="text-white text-center text-3xl lg:text-5xl mt-28" />

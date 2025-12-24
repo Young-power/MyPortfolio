@@ -34,8 +34,8 @@ const Cv = () => {
 
 
   return (
-    <div className='w-full flex flex-col justify-center items-center mt-16'>
-      <div className='w-96 h-[500px] md:w-fit md:flex md:flex-row p-10 rounded-4xl flex flex-col justify-center items-center gap-7 bg-gradient-to-br from-slate-800 to-slate-950 border border-white'>
+    <div className='w-full flex flex-col justify-center items-center mt-16 '>
+      <div className='w-96 sm:w-52 h-[500px] md:w-fit md:flex md:flex-row p-10 rounded-4xl flex flex-col justify-center items-center gap-7 bg-gradient-to-br from-slate-800 to-slate-950 border border-white'>
         <div className="w-52 h-52 md:w-72 md:h-72 rounded-full overflow-hidden border-2 shadow-white-500 border-white-500">
           <Image
             src="/assets/m.jpeg"

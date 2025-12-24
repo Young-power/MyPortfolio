@@ -24,13 +24,13 @@ export default function About() {
 
       {/* Parcours */}
       <div className="mb-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-gradient-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg">
+        <div className="bg-linear-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg">
           <h2 className="text-2xl font-bold mb-4">Mon parcours</h2>
           <p className="text-gray-300 lg:text-lg">
             Après ma première année de BTS en Informatique, je poursuis ma deuxième année en me spécialisant en développement web et mobile. Je crée des projets personnels et professionnels pour perfectionner mes compétences.
           </p>
         </div>
-        <div className="bg-gradient-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg">
+        <div className="bg-linear-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg">
           <h2 className="text-2xl font-bold mb-4">Objectif</h2>
           <p className="text-gray-300 lg:text-lg">
             Créer des applications web et mobiles performantes et esthétiques, tout en apprenant continuellement et en relevant des défis techniques stimulants.
@@ -43,7 +43,7 @@ export default function About() {
         <h2 className="text-3xl font-bold text-center mb-8">Mes compétences</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill) => (
-            <div key={skill.title} className="bg-gradient-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg flex flex-col items-center">
+            <div key={skill.title} className="bg-linear-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg flex flex-col items-center">
               {skill.icon}
               
               <h3 className="text-xl font-bold mt-3">{skill.title}</h3>
