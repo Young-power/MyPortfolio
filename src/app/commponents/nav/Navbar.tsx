@@ -30,7 +30,6 @@ const Navbar = () => {
         autoClose={3000}
         pauseOnHover={false}
         draggable={false}
-        theme="dark"
       />
             <div className="w-full flex lg:flex-col justify-between lg:justify-center items-center px-7">
 
