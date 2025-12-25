@@ -3,6 +3,8 @@ import Image from "next/image"
 import SocialMedia from "../socialMedia/SocialMedia"
 import TextMotion from "../motion/TextMotion"
 import LogoLanguage from "./LogoLanguage"
+import { Zoom } from "react-toastify"
+import ZoomElement from "../motion/ZoomElement"
 const Hero = () => {
     return (
         <div className="w-full  py-3">
@@ -12,17 +14,23 @@ const Hero = () => {
             <div className="flex w-full flex-col lg:flex-row justify-between  rounded-3xl sm:px-16 lg:px-20 pt-10 border-b-2 border-white">
                 <div className="flex flex-col lg:flex-row justify-center items-center gap-x-5 pb-10">
                     <div className="flex flex-row lg:flex-col justify-center items-center space-x-3 lg:space-y-3 ">
-                        <div className=" rounded-full  p-1 border-4 border-yellow-400">
-                            <Image src="/assets/Mahine.jpg" alt="legend" width={200} height={100} className=" object-cover lg:w-96 rounded-full  " />
-                        </div>
-                        <SocialMedia />
+                        <ZoomElement>
+                            <div className=" rounded-full  p-1 border-4 border-yellow-400">
+                                <Image src="/assets/Mahine.jpg" alt="legend" width={200} height={100} className=" object-cover lg:w-96 rounded-full  " />
+                            </div>
+                        </ZoomElement>
+
+                        <TextMotion delay={0.5}>
+                            <SocialMedia />
+                        </TextMotion>
                     </div>
                     <div className=" flex flex-col items-center justify-center lg:mr-5">
                         <TextMotion delay={0.2}>
-                            <span className=" italic text-3xl lg:text-4xl   font-bold bg-gradient-to-r from-white via-yellow-500 to-yellow-600 bg-clip-text text-transparent lg:text-nowrap">Mahaman Kamagaté</span>
-
+                            <span className=" italic text-3xl lg:text-4xl   font-bold bg-linear-to-r from-white via-yellow-500 to-yellow-600 bg-clip-text text-transparent lg:text-nowrap">Mahaman Kamagaté</span>
                         </TextMotion>
-                        <Image src="/assets/coffe.png" alt="legend" width={150} height={150} className=" object-cover md:w-md lg:w-32  " />
+                        <ZoomElement>
+                            <Image src="/assets/coffe.png" alt="legend" width={150} height={150} className=" object-cover md:w-md lg:w-32  " />
+                        </ZoomElement>
                     </div>
                 </div>
 

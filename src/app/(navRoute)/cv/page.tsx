@@ -9,7 +9,8 @@ const page = () => {
         autoClose={3000}
         pauseOnHover={false}
         draggable={false}
-      />      <Cv />
+      />
+      <Cv />
 
     </div>
   )
