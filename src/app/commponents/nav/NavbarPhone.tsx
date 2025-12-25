@@ -30,7 +30,7 @@ const NavbarPhone = () => {
         </ul>
         <Link href={"https://github.com/Young-power"} className='mt-3'>
           <TippyShow message="Github" placement='top' animation='scale' >
-            <FaGithub className=" rounded-full text-2xl "/>
+            <FaGithub className=" rounded-full text-3xl "/>
           </TippyShow>
 
         </Link>

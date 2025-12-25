@@ -6,16 +6,15 @@ const NavbarLaptop = () => {
     const pathName = usePathname();
 
     return (
-        <nav className="flex text-lg font-bold italic">
-            <Link href={"https://github.com/Young-power"} className='mr-7'>
+        <nav className="flex text-lg items-center justify-center">
+            <Link href={"https://github.com/Young-power"} target="_blank" className='mr-7'>
                 <TippyShow message="Github" placement='top' animation='scale' >
-
-                    <FaGithub className=" rounded-full text-2xl " />
+                    <FaGithub className=" rounded-full text-3xl " />
                 </TippyShow>
 
             </Link>
 
-            <ul className="flex   space-x-16 ">
+            <ul className="flex   space-x-16 font-bold italic">
                 <li className={`cursor-pointer hover:text-blue-500 duration-300 ease-in-out ${pathName === '/' ? "text-blue-500" : null}`}>
                     <Link href="/"> Home</Link>
                 </li>
