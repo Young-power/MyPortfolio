@@ -9,6 +9,7 @@ import Image from "next/image";
 import TextMotion from "../motion/TextMotion";
 import ThemeToggle from "@/context/ThemeToggle";
 import { ToastContainer } from "react-toastify";
+import TippyShow from "../tippy/TippyShow";
 const Navbar = () => {
 
 
@@ -25,20 +26,23 @@ const Navbar = () => {
 
     return (
         <header className='w-full  relative dark:bg-white    grid grid-cols-1  lg:px-42  bg-linear-to-br from-stone-900 to-stone-950 text-white  py-5 lg:py-10  '>
- <ToastContainer 
-        position="top-center"
-        autoClose={3000}
-        pauseOnHover={false}
-        draggable={false}
-      />
+            <ToastContainer
+                position="top-center"
+                autoClose={3000}
+                pauseOnHover={false}
+                draggable={false}
+            />
             <div className="w-full flex lg:flex-col justify-between lg:justify-center items-center px-7">
 
                 <TextMotion delay={0.2}>
-                    <div className="flex flex-col  justify-center items-center font-bold italic ">
-                        <span className=" text-white    ">Mahine_K</span>
-                        <FaCode className="text-4xl" />
-                        <Image src={urlImg} width={50} height={50} alt="fire" className="w-16 lg:w-12" />
-                    </div>
+                    <TippyShow message="Logo🔥" placement='right' animation='scale' >
+                        <div className="flex flex-col  justify-center items-center font-bold italic ">
+                            <span className=" text-white    ">Mahine_K</span>
+                            <FaCode className="text-4xl" />
+                            <Image src={urlImg} width={50} height={50} alt="fire" className="w-16 lg:w-12" />
+                        </div>
+                    </TippyShow>
+
                 </TextMotion>
 
                 <div className=" lg:hidden">
