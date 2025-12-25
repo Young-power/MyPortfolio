@@ -7,7 +7,7 @@ const NavbarLaptop = () => {
 
     return (
         <nav className="flex text-lg font-bold italic">
-            <Link href={"https://www.linkedin.com/in/mahine-kamagat%C3%A9-"} className='mr-7'>
+            <Link href={"https://github.com/Young-power"} className='mr-7'>
                 <TippyShow message="Github" placement='top' animation='scale' >
 
                     <FaGithub className=" rounded-full text-2xl " />
