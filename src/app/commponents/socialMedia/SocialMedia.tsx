@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import {  FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 import { GrLinkedinOption } from "react-icons/gr";
 const SocialMedia = () => {
     return (

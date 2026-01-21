@@ -12,7 +12,6 @@ const Footer = () => {
     const [version, setVersion] = useState<string>("");
 
     useEffect(() => {
-
         getVersion();
     }, [])
 

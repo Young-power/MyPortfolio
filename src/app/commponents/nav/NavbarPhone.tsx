@@ -10,6 +10,7 @@ const NavbarPhone = () => {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
+    { href: "/onlineProject", label: "Online_Project" },
     { href: "/cv", label: "CV" },
   ];
 
@@ -30,7 +31,7 @@ const NavbarPhone = () => {
         </ul>
         <Link href={"https://github.com/Young-power"} className='mt-3'>
           <TippyShow message="Github" placement='top' animation='scale' >
-            <FaGithub className=" rounded-full text-3xl "/>
+            <FaGithub className=" rounded-full text-3xl " />
           </TippyShow>
 
         </Link>

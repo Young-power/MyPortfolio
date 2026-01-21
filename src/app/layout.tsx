@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   title: "Mahine.com",
   description: "this porfolio is created to show all my skills",
   icons: {
-    icon: "/assets/Mahine.jpg",
+    icon: "/assets/fire.png",
   },
 };
 

@@ -3,7 +3,6 @@ import Image from "next/image"
 import SocialMedia from "../socialMedia/SocialMedia"
 import TextMotion from "../motion/TextMotion"
 import LogoLanguage from "./LogoLanguage"
-import { Zoom } from "react-toastify"
 import ZoomElement from "../motion/ZoomElement"
 const Hero = () => {
     return (
