@@ -28,7 +28,8 @@ const page = () => {
       <div className='flex flex-col justify-center items-center'>
         <Image src={"/assets/work.gif"}
           width={100}
-          height={100} alt={"tt"}
+          height={100}
+           alt={"Work gif"}
           className='w-52 h-auto  '
         />
         <MyTypewriter />
