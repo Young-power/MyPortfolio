@@ -36,13 +36,19 @@ const Captcha = ({ onSuccess, onClose }: CaptchaProps) => {
             onSuccess();
             setError("");
         } else {
-            setError("❌ Code incorrect, réessaie.");
+
+            if (input === "") {
+                setError("❌ le champ est vide, réessaie.");
+            } else {
+                setError("❌ Captcha non conforme, réessaie.");
+            }
             setCaptcha(generateCaptcha());
             setInput("");
+
         }
     };
 
-    const failDowload = ()=>{
+    const failDowload = () => {
         onClose();
         toast.error("Download failed");
     }
