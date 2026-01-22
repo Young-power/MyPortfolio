@@ -30,7 +30,7 @@ const page = () => {
           width={100}
           height={100}
            alt={"Work gif"}
-          className='w-52 h-auto  '
+          className='w-52 h-auto'
         />
         <MyTypewriter />
       </div>

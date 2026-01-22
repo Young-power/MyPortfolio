@@ -1,7 +1,37 @@
+"use client";
+
+import Captcha from '@/app/commponents/cv/Captcha'
 import Cv from '@/app/commponents/cv/Cv'
-import { ToastContainer } from 'react-toastify'
+import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify'
+import { AnimatePresence } from "framer-motion";
 
 const page = () => {
+  const [showCaptcha, setShowCaptcha] = useState<Boolean>(false);
+
+
+  const handleDownload = async () => {
+    try {
+      const res = await fetch("/assets/files/myCv.pdf");
+      if (!res.ok) throw new Error('Impossible de récupérer le fichier');
+
+      const blob = await res.blob();
+
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+
+      a.href = url;
+      a.download = "mahine_cv.pdf";
+      a.click();
+
+      window.URL.revokeObjectURL(url);
+      toast.success('Téléchargement réuissi !');
+    } catch {
+      toast.error('Erreur : le téléchargement a échoué !');
+    }
+  };
+
+
   return (
     <div className=' relative min-h-screen  flex justify-center items-center'>
       <ToastContainer
@@ -10,7 +40,26 @@ const page = () => {
         pauseOnHover={false}
         draggable={false}
       />
-      <Cv />
+      <Cv onclick={() => setShowCaptcha(true)} />
+
+
+      < AnimatePresence>
+        {
+          showCaptcha &&
+
+          <Captcha
+            onClose={() => setShowCaptcha(false)}
+            onSuccess={() => {
+              setShowCaptcha(false);
+              handleDownload(); 
+            }}
+
+          />
+
+        }
+      </AnimatePresence>
+
+
 
     </div>
   )

@@ -25,7 +25,7 @@ const Navbar = () => {
 
 
     return (
-        <header className='w-full  relative dark:bg-white    grid grid-cols-1  lg:px-42  bg-linear-to-br from-stone-900 to-stone-950 text-white  py-5 lg:py-10  '>
+        <header className='w-full  relative dark:bg-white    grid grid-cols-1  lg:px-42  bg-linear-to-br from-stone-900 to-stone-950 text-white  py-5 lg:py-10   '>
             <ToastContainer
                 position="top-center"
                 autoClose={3000}

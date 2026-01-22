@@ -4,37 +4,23 @@ import { FaFilePdf } from 'react-icons/fa';
 import { IoMdDownload } from "react-icons/io";
 import { toast } from 'react-toastify'
 import TippyShow from '../tippy/TippyShow';
+import { useState } from 'react';
 
 
-const Cv = () => {
+type CaptchaProps = {
+
+  onclick:()=>void
+};
+const Cv = ({onclick}:CaptchaProps) => {
+
 
  
-  const handleDownload = async () => {
-    try {
-      const res = await fetch("/assets/files/myCv.pdf");
-      if (!res.ok) throw new Error('Impossible de récupérer le fichier');
-
-      const blob = await res.blob();
-
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-
-      a.href = url;
-      a.download = "mahine_cv.pdf";
-      a.click();
-
-      window.URL.revokeObjectURL(url);
-      toast.success('Téléchargement réuissi !');
-    } catch{
-      toast.error('Erreur : le téléchargement a échoué !');
-    }
-  };
 
 
 
   return (
     <div className='w-full flex flex-col justify-center items-center mt-16 '>
-      <div className='w-96 sm:w-52 h-[500px] md:w-fit md:flex md:flex-row p-10 rounded-4xl flex flex-col justify-center items-center gap-7 bg-linear-to-br from-slate-800 to-slate-950 border border-white'>
+      <div className='w-full md:w-full lg:w-[800px] h-[500px]  md:flex md:flex-row p-10 rounded-4xl flex flex-col justify-center items-center gap-7 bg-linear-to-br from-slate-800 to-slate-950 border border-white'>
         <div className="w-52 h-52 md:w-72 md:h-72 rounded-full overflow-hidden border-2 shadow-white-500 border-white-500">
           <Image
             src="/assets/m.jpeg"
@@ -46,9 +32,9 @@ const Cv = () => {
         </div>
 
         <div className='flex flex-col justify-center items-center md:gap-3'>
-          <TippyShow message="Download" placement='top' animation='scale'>
+          <TippyShow message="Download" placement='bottom' animation='scale'>
             <button
-              onClick={handleDownload}
+              onClick={onclick}
               className="bg-linear-to-tl from-blue-600 to-blue-800 text-white text-md lg:text-xl px-5 py-3 rounded-4xl cursor-pointer inline-flex items-center gap-2 transition-transform hover:translate-y-1 duration-300 ease-in-out"
             >
               <FaFilePdf size={25} className="text-red-400" />

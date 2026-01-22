@@ -44,7 +44,7 @@ const OnlineProjectCard = ({ img, description, month, alt, url, title, icons }: 
 
                     </div>
                     <div className='flex flex-col  items-center '>
-                        <div className='animate-bounce'> <FaArrowDown /></div>
+                        <div className='animate-bounce text-gray-600'> <FaArrowDown /></div>
                         <Link href={url}>
                             <TbWorld className='text-4xl animate-pulse duration-1000 text-gray-400 hover:text-blue-400 transition-colors' />
                         </Link>
