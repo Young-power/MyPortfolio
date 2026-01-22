@@ -2,9 +2,7 @@
 import Image from 'next/image'
 import { FaFilePdf } from 'react-icons/fa';
 import { IoMdDownload } from "react-icons/io";
-import { toast } from 'react-toastify'
 import TippyShow from '../tippy/TippyShow';
-import { useState } from 'react';
 
 
 type CaptchaProps = {

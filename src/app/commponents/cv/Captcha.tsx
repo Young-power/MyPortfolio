@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { IoMdCloseCircleOutline } from "react-icons/io";
+import { toast } from "react-toastify";
 
 const generateCaptcha = () => {
     const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; // sans 0,O,I,1
@@ -41,6 +41,11 @@ const Captcha = ({ onSuccess, onClose }: CaptchaProps) => {
             setInput("");
         }
     };
+
+    const failDowload = ()=>{
+        onClose();
+        toast.error("Download failed");
+    }
 
     return (
         <motion.div
@@ -102,7 +107,7 @@ const Captcha = ({ onSuccess, onClose }: CaptchaProps) => {
                         🔄
                     </button>
                     <button
-                        onClick={onClose}
+                        onClick={failDowload}
                         className="bg-red-500 cursor-pointer px-4 py-3 rounded-md text-white font-bold italic text-md hover:bg-red-400 transition"
                     >
                         Fermer
