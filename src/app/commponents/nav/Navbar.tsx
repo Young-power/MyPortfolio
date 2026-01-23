@@ -51,7 +51,6 @@ const Navbar = () => {
                             <ThemeToggle />
                         </div>
                         {
-
                             shadowNav ? <CgClose className="text-3xl cursor-pointer" onClick={handleShowNavbar} /> : <FiMenu className="text-3xl cursor-pointer" onClick={handleShowNavbar} />
                         }
                     </div>

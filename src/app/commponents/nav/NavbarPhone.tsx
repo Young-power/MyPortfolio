@@ -17,14 +17,14 @@ const NavbarPhone = () => {
 
   return (
     <div className="w-full">
-      <nav className="w-full flex flex-col justify-center items-center text-md font-bold italic">
+      <nav className="w-full flex flex-col justify-center items-center text-md font-bold italic ">
         <ul className="w-full flex flex-col justify-center items-center space-y-3">
           {links.map((link, index) => (
 
-            <TextMotion delay={index * 0.3}>
+            <TextMotion  key={link.href} delay={index * 0.3}>
 
               <li
-                key={link.href}
+               
                 className={`cursor-pointer w-full text-center hover:text-white hover:bg-linear-to-tl hover:from-blue-600 hover:to-blue-800 duration-300 ease-in-out ${pathName === link.href ? "text-blue-500" : ""
                   }`}
               >
@@ -35,12 +35,11 @@ const NavbarPhone = () => {
           ))}
 
         </ul>
-        <TextMotion delay={links.length * 0.12 + 0.2}>
-          <Link href={"https://github.com/Young-power"} className='mt-7'>
+        <TextMotion delay={links.length * 0.12 + 0.2} style="my-5">
+          <Link href={"https://github.com/Young-power"}>
             <TippyShow message="Github" placement='top' animation='scale' >
               <FaGithub className=" rounded-full text-3xl " />
             </TippyShow>
-
           </Link>
         </TextMotion>
 

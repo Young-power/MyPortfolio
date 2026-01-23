@@ -22,7 +22,7 @@ const Captcha = ({ onSuccess, onClose }: CaptchaProps) => {
     const [input, setInput] = useState("");
     const [error, setError] = useState("");
 
-    const handleChange = (e: any) => {
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         // Force majuscule + enlève caractères chelous
         const value = e.target.value
             .toUpperCase()

@@ -1,10 +1,12 @@
 'use client';
 import {motion} from 'framer-motion'
 interface Props {
-    children:React.ReactNode,
-    delay:number
+    children:React.ReactNode;
+    delay:number;
+    style?:string;
+
 }
-const TextMotion = ({children, delay}:Props) => {
+const TextMotion = ({children, delay, style}:Props) => {
   return (
     <motion.div
  
@@ -12,6 +14,7 @@ const TextMotion = ({children, delay}:Props) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay }}
+      className={`${style}`}
     >
         {children}
     </motion.div>

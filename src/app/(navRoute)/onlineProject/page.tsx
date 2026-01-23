@@ -3,9 +3,8 @@ import Image from "next/image"
 import { FaJsSquare } from "react-icons/fa"
 import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io"
 import MyTypewriter from "./TypeWriter"
-import { div } from "framer-motion/client"
 
-const page = () => {
+const Page = () => {
   return (
 
     <div className=' relative min-h-screen  '>
@@ -21,9 +20,9 @@ const page = () => {
           img="/assets/schoolProject.png"
           alt="first project culture général"
           icons={[
-            <IoLogoHtml5 className="text-2xl hover:text-orange-500 transition-colors" />,
-            <IoLogoCss3 className="text-2xl hover:text-blue-500 transition-colors" />,
-            <FaJsSquare className=" text-2xl hover:text-yellow-400 transition-colors" />
+            <IoLogoHtml5 key="html" className="text-2xl hover:text-orange-500 transition-colors" />,
+            <IoLogoCss3 key="css"    className="text-2xl hover:text-blue-500 transition-colors" />,
+            <FaJsSquare  key="js" className=" text-2xl hover:text-yellow-400 transition-colors" />
 
           ]}
         />
@@ -43,4 +42,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

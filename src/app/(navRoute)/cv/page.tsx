@@ -6,8 +6,8 @@ import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify'
 import { AnimatePresence } from "framer-motion";
 
-const page = () => {
-  const [showCaptcha, setShowCaptcha] = useState<Boolean>(false);
+const Page = () => {
+  const [showCaptcha, setShowCaptcha] = useState<boolean>(false);
 
 
   const handleDownload = async () => {
@@ -65,4 +65,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
