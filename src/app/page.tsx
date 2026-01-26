@@ -11,6 +11,7 @@ import SkillSender from "./commponents/skills/SkillSender";
 import Title from "./commponents/Title";
 
 export default function Home() {
+
   return (
     <div className="w-full bg-linear-to-br from-stone-900 to-stone-950 h-full   ">
       <Hero />

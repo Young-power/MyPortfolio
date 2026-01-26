@@ -5,10 +5,8 @@ import Cv from '@/app/commponents/cv/Cv'
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify'
 import { AnimatePresence } from "framer-motion";
-
 const Page = () => {
   const [showCaptcha, setShowCaptcha] = useState<boolean>(false);
-
 
   const handleDownload = async () => {
     try {
@@ -51,7 +49,7 @@ const Page = () => {
             onClose={() => setShowCaptcha(false)}
             onSuccess={() => {
               setShowCaptcha(false);
-              handleDownload(); 
+              handleDownload();
             }}
 
           />

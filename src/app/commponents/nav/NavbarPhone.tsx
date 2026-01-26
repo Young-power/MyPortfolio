@@ -12,6 +12,7 @@ const NavbarPhone = () => {
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
     { href: "/onlineProject", label: "Online_Project" },
+    { href: "/librarie", label: "Libraries" },
     { href: "/cv", label: "CV" },
   ];
 
@@ -21,10 +22,10 @@ const NavbarPhone = () => {
         <ul className="w-full flex flex-col justify-center items-center space-y-3">
           {links.map((link, index) => (
 
-            <TextMotion  key={link.href} delay={index * 0.3}>
+            <TextMotion key={link.href} delay={index * 0.3}>
 
               <li
-               
+
                 className={`cursor-pointer w-full text-center hover:text-white hover:bg-linear-to-tl hover:from-blue-600 hover:to-blue-800 duration-300 ease-in-out ${pathName === link.href ? "text-blue-500" : ""
                   }`}
               >
