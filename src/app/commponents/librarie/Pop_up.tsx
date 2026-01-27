@@ -5,6 +5,7 @@ import { libType } from '@/app/commponents/librarie/librariesData'
 import Link from "next/link";
 import { TbWorld } from "react-icons/tb";
 import { toast } from "react-toastify";
+import { IoCopyOutline } from "react-icons/io5";
 
 type Props = libType & {
     disabledPop: () => void;
@@ -79,9 +80,10 @@ const PopUp = ({
                         <span className="text-gray-700">{command}</span>
                         <button
                             onClick={copied}
-                            className="text-blue-600  text-sm cursor-pointer"
+                            className="cursor-pointer"
                         >
-                            Copy
+                            <IoCopyOutline className="text-blue-600 text-2xl" />
+
                         </button>
                     </div>
 
@@ -101,10 +103,10 @@ const PopUp = ({
                         <div className="flex gap-3 text-2xl">
                             {icons.map((icon, index) => (
 
-                            <Link href={icon.link} key={index}  onClick={(e) => e.stopPropagation()}>
-                                <span className='text-black' >{icon.logo}</span>
-                            </Link>
-                        ))}
+                                <Link href={icon.link} key={index} onClick={(e) => e.stopPropagation()}>
+                                    <span className='text-black' >{icon.logo}</span>
+                                </Link>
+                            ))}
                         </div>
                     )}
 

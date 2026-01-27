@@ -33,6 +33,7 @@ const Page = () => {
             height={100}
             alt={"Work gif"}
             className='w-52 h-auto'
+            unoptimized
           />
           <MyTypewriter />
         </div>

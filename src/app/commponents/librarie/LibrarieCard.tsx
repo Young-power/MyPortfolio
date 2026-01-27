@@ -17,13 +17,15 @@ const LibrarieCard = ({ name, description,  screenshot, status, icons, onclick }
 
     return (
         <div onClick={onclick} className='flex border  flex-col w-full px-3 lg:w-[400px] overflow-hidden hover:cursor-pointer bg-gray-50  border-gray-300 rounded-2xl group  transition-transform duration-300 hover:translate-y-2 shadow-md hover:shadow-2xl'>
-            <div className=' overflow-hidden'>
+           
+            <div className=' overflow-hidden pt-3'>
                 <Image src={screenshot?.photo || ''}
                     width={1200}
                     height={700} alt={screenshot?.alt || "no found img"}
-                    className='w-full h-auto rounded-t-xl object-cover transition-transform duration-500 group-hover:scale-105 '
+                    className='w-full h-auto rounded-xl object-cover transition-transform duration-500 group-hover:scale-105 '
                 />
             </div>
+
             <div className='text-black '>
                 <div className='flex justify-between items-center'>
                     <h1 className="text-xl font-semibold italic py-1 text-gray-500  ">{name}</h1>

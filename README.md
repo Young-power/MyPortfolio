@@ -1,39 +1,63 @@
 <p align="center">
-  <img src="https://github.com/Young-power/MyPortfolio/main/public/assets/pre.png" width="600" />
+  <img src="https://raw.githubusercontent.com/Young-power/MyPortfolio/main/public/assets/pre.png" width="600" />
 </p>
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+<h1 align="center">👋 Hi, I'm Mahine</h1>
 
-First, run the development server:
+<p align="center">
+  🚀 Fullstack Developer | ⚛️ Next.js & React | 🧠 Building useful tools
+</p>
+
+---
+
+## 🌍 About Me
+
+Hi, I'm **Mahine**, a passionate web developer who loves building:
+
+- ⚡ Modern web applications with **Next.js**
+- 🧠 Developer tools and utilities
+- 🎨 Clean and performant user interfaces
+- 🏗️ Scalable fullstack architectures
+
+I enjoy learning by building real projects and solving real problems.
+
+---
+
+## 🧰 Tech Stack
+
+- ⚛️ **Frontend**: React, Next.js, TypeScript, Tailwind CSS
+- 🖥️ **Backend**: nest.js, python
+- 🗄️ **Tools**: Git, GitHub, npm, VS Code, linux
+- ☁️ **Deployment**: Vercel
+
+---
+
+## 🚀 Featured Projects
+
+### 🔍 next-mahine-rsc-inspector
+
+> A CLI and library to inspect and analyze Next.js React Server Components architecture.
+
+- 📦 npm: https://www.npmjs.com/package/next-mahine-rsc-inspector
+- 💻 GitHub: https://github.com/Young-power/next-mahine-rsc-inspector
+
+---
+
+## 📸 Preview
+
+You can see a preview of my portfolio here 👆
+
+---
+
+## 📬 Contact
+
+- 💼 GitHub: https://github.com/Young-power
+- ☕ Buy me a coffee: https://buymeacoffee.com/mahine
+
+---
+
+## 🛠️ Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

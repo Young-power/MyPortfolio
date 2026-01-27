@@ -73,12 +73,12 @@ export const libraries: libType[] = [
         createdAt: "2026-01-25",
         license: "MIT",
 
-        logo: "/assets/lib1.png",
+        logo: "/assets/lib1.jpeg",
 
         screenshot: {
 
             alt: "picture of next-mahine-rsc-inspector",
-            photo: "/assets/lib1.png"
+            photo: "/assets/lib1.jpeg"
         },
 
         preview: {
