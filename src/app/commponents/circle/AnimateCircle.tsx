@@ -48,7 +48,7 @@ export default function AnimatedCircle({ years, showText }: Props) {
 
   const data = [
     { name: "exp", value: count, fill: "#3b82f6" },
-    { name: "rest", value: 100 - count, fill: "white" }
+    { name: "rest", value: 100 - count, fill: "#6e747a" }
   ];
 
   return (
@@ -64,7 +64,7 @@ export default function AnimatedCircle({ years, showText }: Props) {
           stroke="none"
         />
       </PieChart>
-      <div className="absolute text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold text-white">
+      <div className="absolute text-muted-foreground dark:text-white text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold ">
         + {count}{ showText && " mois"}
       </div>
     </div>

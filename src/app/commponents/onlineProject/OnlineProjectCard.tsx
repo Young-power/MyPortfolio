@@ -18,7 +18,7 @@ interface Props {
 
 const OnlineProjectCard = ({ img, description, month, alt, url, title, icons }: Props) => {
     return (
-        <div className='flex flex-col w-ful lg:w-[400px] overflow-hidden hover:cursor-pointer bg-gray-50 border-0.5 border-gray-300 rounded-2xl group  transition-transform duration-300 hover:translate-y-2 shadow-md hover:shadow-lg'>
+        <div className='flex flex-col w-ful lg:w-[400px] overflow-hidden hover:cursor-pointer bg-muted dark:bg-gray-50 border-0.5 border-gray-300 rounded-2xl group  transition-transform duration-300 hover:translate-y-2 shadow-md hover:shadow-lg'>
             <div className=' overflow-hidden'>
                 {/* <Image src={img} width={100} height={100} alt={alt} />*/}
                 <Image src={img}

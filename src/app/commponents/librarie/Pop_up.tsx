@@ -1,11 +1,12 @@
 "use client"
 
 import { AiOutlineCloseCircle } from "react-icons/ai"
-import { libType } from '@/app/commponents/librarie/librariesData'
+import { iconType, libType } from '@/app/commponents/librarie/librariesData'
 import Link from "next/link";
 import { TbWorld } from "react-icons/tb";
 import { toast } from "react-toastify";
 import { IoCopyOutline } from "react-icons/io5";
+import Image from "next/image";
 
 type Props = libType & {
     disabledPop: () => void;
@@ -39,7 +40,7 @@ const PopUp = ({
         try {
             await navigator.clipboard.writeText(command);
             toast.success("Copied successfully!");
-        } catch (err) {
+        } catch  {
             toast.error("Impossible de copier ❌");
         }
     };
@@ -64,7 +65,7 @@ const PopUp = ({
                 {/* Header */}
                 <div className="flex items-center gap-4 p-6 border-b">
                     {logo && (
-                        <img src={logo} alt={name} className="w-12 h-12 rounded-lg" />
+                        <Image src={logo} width={50} height={50} alt={name} className="w-12 h-12 rounded-lg" />
                     )}
                     <div>
                         <h2 className="text-2xl font-bold lg:text-nowrap text-black">{name}</h2>
@@ -112,7 +113,7 @@ const PopUp = ({
 
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2">
-                        {tags.map((tag: any) => (
+                        {tags.map((tag: string) => (
                             <span key={tag} className="px-3 py-1 text-xs rounded-full bg-blue-100 text-blue-700">
                                 #{tag}
                             </span>
@@ -120,7 +121,7 @@ const PopUp = ({
                     </div>
                     {creatorLogo && (
                         <div className="flex  items-center  gap-3">
-                            <img src={creatorLogo} alt={"creator picture"} className="w-12 h-12 rounded-lg" />
+                            <Image src={creatorLogo} alt={"creator picture"} width={50} height={50} className="w-12 h-12 rounded-lg" />
                             <div>
                                 <span className="text-gray-400 italic font-bold">autor</span>
                                 <p className="text-gray-600 font-bold italic ">{author}</p>
@@ -133,7 +134,7 @@ const PopUp = ({
                     <div>
                         <h3 className="font-semibold mb-2">✨ Features</h3>
                         <ul className="list-disc list-inside space-y-1 text-gray-700">
-                            {features.map((f: any, i: any) => (
+                            {features.map((f: string, i: number) => (
                                 <li key={i}>{f}</li>
                             ))}
                         </ul>
@@ -142,24 +143,31 @@ const PopUp = ({
 
                     {/* Screenshot */}
                     {screenshot && (
-                        <div>
-                            <h3 className="font-semibold mb-2 text-black lg:text-xl">📸 Preview</h3>
+                       <div>
+  <h3 className="font-semibold mb-2 text-black lg:text-xl">📸 Preview</h3>
 
-                            <img
-                                src={preview.photo}
-                                alt={preview.alt}
-                                className="rounded-xl border mb-2"
-                            />
+ <div className="relative w-full mb-2">
+  <Image
+    src={preview.photo}
+    alt={preview.alt}
+    width={1200}
+    height={800}
+    className="w-full border object-cover rounded-2xl"
+    priority
+  />
+</div>
 
-                            <a
-                                href={preview.photo}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 px-3 py-1 text-sm rounded-full bg-blue-100 text-blue-700 font-semibold select-none"
-                            >
-                                🔍 Ouvrir en grand
-                            </a>
-                        </div>
+
+  <a
+    href={preview.photo}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-3 py-1 text-sm rounded-full bg-blue-100 text-blue-700 font-semibold select-none"
+  >
+    🔍 Ouvrir en grand
+  </a>
+</div>
+
                     )}
 
                     {/* Links */}
@@ -175,7 +183,7 @@ const PopUp = ({
 
                         {icons && icons.length > 0 && (
                             <div className="flex gap-5 text-2xl ">
-                                {icons.map((icon: any, i: any) => (
+                                {icons.map((icon:iconType, i: number) => (
                                     <Link href={icon.link} key={i}>
                                         <span  >{icon.logo}</span>
                                     </Link>

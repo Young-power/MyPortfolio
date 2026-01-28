@@ -7,7 +7,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 const Mail = () => {
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 px-1 my-3 rounded-full gap-y-5 lg:gap-x-7  '>
-            <div className='w-full relative flex flex-col justify-center items-center lg:w-full px-3 bg-gradient-to-br from-slate-800 to-slate-950 rounded-2xl py-3'>
+            <div className='w-full relative flex flex-col justify-center items-center lg:w-full px-3 bg-linear-to-br from-slate-800 to-slate-950 rounded-2xl py-3'>
                 <form 
                 action="mailto:mahinekamagate@gmail.com"
                 method='POST'

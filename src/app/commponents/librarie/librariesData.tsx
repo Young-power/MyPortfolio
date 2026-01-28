@@ -3,7 +3,7 @@ import { DiNpm } from "react-icons/di"
 import { FaGithub } from "react-icons/fa6"
 
 
-type iconType = {
+export type iconType = {
         type: string;
         logo: ReactNode;
         link: string;

@@ -11,10 +11,10 @@ const Project3 = () => {
     return (
         <section className='w-full mt-10'>
             <Title title="Projet Mobile" style="text-white text-center text-2xl mb-5" />
-            <p className='text-white text-center mb-3 text-xl lg:text-2xl'>⭐ WhatsApp Clone (React Native)</p>
+            <p className='text-center mb-3 text-xl lg:text-2xl text-muted-foreground dark:text-white font-bold'>⭐ WhatsApp Clone (React Native)</p>
 
             <div className='w-full flex flex-col lg:flex-row justify-center items-center'>
-                <div className='w-full lg:w-1/2 '>
+                <div className='w-full lg:w-1/2 shadow-lg rounded-3xl '>
                     <Image src={"/assets/projet3.png"} alt="project1" width={600} height={400} className='w-full h-auto p-5 rounded-3xl block' />
                 </div>
 
@@ -23,19 +23,19 @@ const Project3 = () => {
                     <div className='w-32 '>
                         <div className='flex flex-col justify-center items-center '>
                             <IoLogoReact className='text-[170px] lg:text-[200px]  text-blue-600' />
-                            <p className='text-white text-xl lg:text-2xl text-nowrap font-medium italic'>React Native</p>
+                            <p className='text-muted-foreground dark:text-white text-xl lg:text-2xl text-nowrap font-medium italic'>React Native</p>
                         </div>
                         <div className='flex flex-col justify-center items-center mt-7 gap-y-1'>
-                            <FaGithub className='text-white text-5xl ml-2 cursor-pointer animate-bounce duration-1000' />
+                            <FaGithub className='text-black dark:text-white text-5xl ml-2 cursor-pointer animate-bounce duration-1000' />
 
 
                             <TippyShow message="click pour voir" placement='right' animation='scale' >
-                                <button className="btn btn-outline border px-3 lg:px-5 py-0.5 text-white text-nowrap  rounded-4xl ">
-                                    <Link href={"https://github.com/Young-power/whatsapp_ReactNative.git"} className='rounded-4xl' > Voir le code <FaCode className='inline-block' /></Link>
+                                <button className="btn btn-outline border px-3 hover:text-white lg:px-5 py-0.5 text-muted-foreground dark:text-white text-nowrap  rounded-4xl ">
+                                    <Link href={"https://github.com/Young-power/whatsapp_ReactNative.git"} className='rounded-4xl font-bold ' > Voir le code <FaCode className='inline-block' /></Link>
                                 </button>
                             </TippyShow>
 
-                            <p className="mt-2 text-sm opacity-80 text-nowrap">Consultez le repo sur GitHub</p>
+                            <p className="mt-2 text-sm opacity-80 text-nowrap text-muted-foreground dark:text-white">Consultez le repo sur GitHub</p>
 
                         </div>
 

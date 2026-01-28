@@ -34,7 +34,7 @@ export default function MyMap() {
             />
             <Marker position={position}>
                 <Popup><div className="text-center">
-                    <h3 className="font-bold">Abidjan (Cocody) 🚀</h3>
+                    <h3 className="font-bold text-muted-foreground ">Abidjan (Cocody) 🚀</h3>
                     <Image
                         src="/assets/Mahine.jpg"
                         alt="Abidjan"

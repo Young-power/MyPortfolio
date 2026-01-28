@@ -40,7 +40,7 @@ export default function About() {
 
       {/* Compétences */}
       <div className="mb-12">
-        <h2 className="text-3xl font-bold text-center mb-8">Mes compétences</h2>
+        <h2 className="text-3xl font-bold text-center mb-8 text-muted-foreground ">Mes compétences</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill) => (
             <div key={skill.title} className="bg-linear-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg flex flex-col items-center">

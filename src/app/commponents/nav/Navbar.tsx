@@ -7,9 +7,11 @@ import { CgClose } from "react-icons/cg";
 import { FaCode } from "react-icons/fa6";
 import Image from "next/image";
 import TextMotion from "../motion/TextMotion";
-import ThemeToggle from "@/context/ThemeToggle";
+//import ThemeToggle, { ModeToggle } from "@/context/ThemeToggle";
 import { ToastContainer } from "react-toastify";
 import TippyShow from "../tippy/TippyShow";
+import ThemeToggle from "@/context/ThemeToggle";
+//import ThemeToggle, { ModeToggle } from "@/context/ThemeToggle";
 const Navbar = () => {
 
 
@@ -25,7 +27,14 @@ const Navbar = () => {
 
 
     return (
-        <header className='w-full  relative dark:bg-white    grid grid-cols-1  lg:px-42  bg-linear-to-br from-stone-900 to-stone-950 text-white  py-5 lg:py-10   '>
+<header
+  className="
+   border-b-muted-foreground
+    w-full relative grid grid-cols-1 lg:px-42 py-5 lg:py-10
+    bg-gray-100 text-black
+    dark:bg-linear-to-br dark:from-stone-900 dark:to-stone-950 dark:text-white
+  "
+>
             <ToastContainer
                 position="top-center"
                 autoClose={3000}
@@ -37,7 +46,7 @@ const Navbar = () => {
                 <TextMotion delay={0.2}>
                     <TippyShow message="Logo🔥" placement='right' animation='scale' >
                         <div className="flex flex-col  justify-center items-center font-bold italic ">
-                            <span className=" text-white    ">Mahine_K</span>
+                            <span className=" text-black dark:text-white    ">Mahine_K</span>
                             <FaCode className="text-4xl" />
                             <Image src={urlImg} width={50} height={50} alt="fire" className="w-16 lg:w-12" />
                         </div>

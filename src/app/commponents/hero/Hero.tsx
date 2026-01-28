@@ -4,13 +4,21 @@ import SocialMedia from "../socialMedia/SocialMedia"
 import TextMotion from "../motion/TextMotion"
 import LogoLanguage from "./LogoLanguage"
 import ZoomElement from "../motion/ZoomElement"
+import { useIsDark } from "@/util/useIsDark"
+import { FaCode, FaMusic, FaTerminal } from "react-icons/fa6"
+import { FaJsSquare } from "react-icons/fa"
+import { GiCoffeeCup } from "react-icons/gi";
 const Hero = () => {
+    const { isDark } = useIsDark();
+
+
+
     return (
         <div className="w-full  py-3">
             <LogoLanguage />
 
             {/* Hero*/}
-            <div className="flex w-full flex-col lg:flex-row justify-between  rounded-3xl sm:px-16 lg:px-20 pt-10 border-b-2 border-white">
+            <div className="flex w-full flex-col lg:flex-row justify-between  rounded-3xl sm:px-16 lg:px-20 pt-10 border-b-2 border-black dark:border-white">
                 <div className="flex flex-col lg:flex-row justify-center items-center gap-x-5 pb-10">
                     <div className="flex flex-row lg:flex-col justify-center items-center space-x-3 lg:space-y-3 ">
                         <ZoomElement>
@@ -25,17 +33,19 @@ const Hero = () => {
                     </div>
                     <div className=" flex flex-col items-center justify-center lg:mr-5">
                         <TextMotion delay={0.2}>
-                            <span className=" italic text-3xl lg:text-4xl   font-bold bg-linear-to-r from-white via-yellow-500 to-yellow-600 bg-clip-text text-transparent lg:text-nowrap">Mahaman Kamagaté</span>
+                            <span className=" italic text-3xl lg:text-4xl   font-bold bg-linear-to-r from-white via-yellow-500 to-yellow-600 bg-clip-text text-transparent lg:text-nowrap  drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)] ">Mahaman Kamagaté</span>
                         </TextMotion>
                         <ZoomElement>
-                            <Image src="/assets/coffe.png" alt="legend" width={150} height={150} className=" object-cover md:w-md lg:w-32  " />
+                            {isDark ? <Image src="/assets/coffe.png" alt="legend" width={150} height={150} className="  object-cover md:w-md lg:w-32  " /> : <div className="flex  gap-1 mt-5 text-lg"><FaTerminal  /><GiCoffeeCup /> <FaJsSquare /><FaMusic /><FaCode /> </div>
+
+               }
                         </ZoomElement>
                     </div>
                 </div>
 
-                <div className="w-full flex flex-col  justify-center items-center lg:max-w-1/2 lg:border-l-5  lg:border-white text-xl">
-                    <h1 className="text-white text-lg pb-3 font-bold italic text-nowrap pl-3 lg:text-xl  ">« Développeur Web & Mobile <span className=" hidden md:inline-block">Passionné</span>  »</h1>
-                    <p className="w-full text-sm md:text-md text-wrap text-center lg:text-wrap text-white lg:px-10 lg:text-2xl lg:text-justify ">
+                <div className="w-full flex flex-col  justify-center items-center lg:max-w-1/2 lg:border-l-5  dark:lg:border-white text-xl">
+                    <h1 className="text-muted-foreground  dark:text-white text-lg pb-3 font-bold italic text-nowrap pl-3 lg:text-xl   ">« Développeur Web & Mobile <span className=" hidden md:inline-block">Passionné</span>  »</h1>
+                    <p className="w-full text-sm md:text-md text-wrap text-center lg:text-wrap text-muted-foreground dark:text-white lg:px-10 lg:text-2xl lg:text-justify  ">
                         Je suis Mahaman Mainnou Kamagaté, développeur full-stack passionné par la création d’applications web et mobiles modernes.
                         J&apos;aime transformer des idées en solutions concrètes, en alliant performance, design et innovation.
                         Mon objectif : concevoir des expériences numériques utiles, fluides et accessibles à tous. »

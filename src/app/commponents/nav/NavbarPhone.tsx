@@ -26,8 +26,12 @@ const NavbarPhone = () => {
 
               <li
 
-                className={`cursor-pointer w-full text-center hover:text-white hover:bg-linear-to-tl hover:from-blue-600 hover:to-blue-800 duration-300 ease-in-out ${pathName === link.href ? "text-blue-500" : ""
-                  }`}
+                className={`cursor-pointer w-full text-center
+  ${pathName === link.href ? "text-blue-500" : "text-muted-foreground"}
+  hover:text-white hover:bg-linear-to-tl hover:from-blue-600 hover:to-blue-800
+  duration-300 ease-in-out
+`}
+
               >
                 <Link href={link.href}>{link.label}</Link>
               </li>
@@ -39,7 +43,7 @@ const NavbarPhone = () => {
         <TextMotion delay={links.length * 0.12 + 0.2} style="my-5">
           <Link href={"https://github.com/Young-power"}>
             <TippyShow message="Github" placement='top' animation='scale' >
-              <FaGithub className=" rounded-full text-3xl " />
+              <FaGithub className=" rounded-full text-3xl text-black dark:text-white" />
             </TippyShow>
           </Link>
         </TextMotion>
