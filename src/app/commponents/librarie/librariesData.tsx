@@ -54,7 +54,7 @@ export const libraries: libType[] = [
         command: "npm install next-mahine-rsc-inspector",
         npm: "https://www.npmjs.com/package/next-mahine-rsc-inspector",
         github: "https://github.com/Young-power/next-mahine-rsc-inspector",
-        website: "j",
+        website: "https://next-mahine-rsc-doc.vercel.app/",
 
         version: "1.0.0",
         stars: 3,       // optionnel

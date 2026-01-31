@@ -11,9 +11,7 @@ import Image from "next/image";
 type Props = libType & {
     disabledPop: () => void;
 }
-export const inProduction = (): void => {
-    toast.info("In production");
-}
+
 const PopUp = ({
     disabledPop,
     name,
@@ -173,8 +171,8 @@ const PopUp = ({
                     {/* Links */}
                     <div className="flex gap-4 pt-4 justify-around items-center g">
                         {website && (
-                            <div className='flex flex-col  items-center ' onClick={inProduction}>
-                                <Link href={""}>
+                            <div className='flex flex-col  items-center ' >
+                                <Link href={website} target="_bank">
                                     <TbWorld className='text-4xl animate-pulse duration-1000 text-gray-400 hover:text-blue-400 transition-colors' />
                                 </Link>
                                 <p className='text-sm text-gray-400'>web site</p>

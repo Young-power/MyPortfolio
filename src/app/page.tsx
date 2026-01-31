@@ -14,7 +14,6 @@ export default function Home() {
 
   return (
     <div className="w-full bg-white/40 dark:bg-linear-to-br  dark:from-stone-900 dark:to-stone-950 h-full   ">
-      
       <Hero />
       <ButtonTop />
       <Title title="COMPETANCES" style="text-muted-foreground dark:text-white font-bold text-center text-3xl lg:text-5xl mt-28" />

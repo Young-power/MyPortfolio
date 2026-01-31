@@ -18,7 +18,7 @@ const GoToTop = () => {
         };
         window.addEventListener("scroll", handleScroll);
 
-        return ()=> window.addEventListener("scroll", handleScroll);
+        return ()=> window.removeEventListener("scroll", handleScroll);
 
     },[]);
 

@@ -4,13 +4,12 @@ import { libType } from './librariesData';
 import { TbWorld } from 'react-icons/tb';
 import Link from 'next/link';
 import { FaArrowDown } from 'react-icons/fa6';
-import { inProduction } from './Pop_up';
 
 type Props = libType & {
     onclick: () => void;
 }
 
-const LibrarieCard = ({ name, description,  screenshot, status, icons, onclick }: Props) => {
+const LibrarieCard = ({ name, description,  screenshot, status, icons,website, onclick }: Props) => {
 
 
 
@@ -53,11 +52,11 @@ const LibrarieCard = ({ name, description,  screenshot, status, icons, onclick }
 
                     <div className='flex flex-col  items-center  ' onClick={(e)=>{
                         e.stopPropagation();
-                        inProduction();
+                       
 
                     }}  >
                         <div className='animate-bounce text-gray-600'> <FaArrowDown /></div>
-                        <Link href={""}>
+                        <Link href={website || ""} target='_bank'>
                             <TbWorld className=' text-3xl  animate-pulse duration-1000 text-gray-400 hover:text-blue-400 transition-colors' />
                         </Link>
                         <p className='text-sm text-gray-400'>voir le doc</p>
