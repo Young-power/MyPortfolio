@@ -10,7 +10,7 @@ const Page = () => {
 
   const handleDownload = async () => {
     try {
-      const res = await fetch("/assets/files/myCv.pdf");
+      const res = await fetch("/assets/files/MahamanCv.pdf");
       if (!res.ok) throw new Error('Impossible de récupérer le fichier');
 
       const blob = await res.blob();
