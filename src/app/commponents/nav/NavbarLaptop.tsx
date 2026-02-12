@@ -49,7 +49,7 @@ const NavbarLaptop = () => {
                 </CardMotion>
                 <CardMotion delay={0.8}>
                     <li className={`cursor-pointer hover:text-blue-500 duration-300 ease-in-out ${pathName === '/librarie' ? "text-blue-500" : null}`}>
-                        <Link href="/librarie">Libraries</Link>
+                        <Link href="/library">Libraries</Link>
                     </li>
                 </CardMotion>
 

@@ -12,7 +12,7 @@ const NavbarPhone = () => {
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
     { href: "/onlineProject", label: "Online_Project" },
-    { href: "/librarie", label: "Libraries" },
+    { href: "/library", label: "Libraries" },
     { href: "/cv", label: "CV" },
   ];
 

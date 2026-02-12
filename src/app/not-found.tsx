@@ -1,14 +1,17 @@
+import ShowPath from "@/util/ShowPath";
 import Link from "next/link";
 import { FaRobot } from "react-icons/fa6";
 import { TiWarning } from "react-icons/ti";
 export default function NotFound() {
+  
     return (
         <div className="min-h-screen flex flex-col justify-center items-center text-center">
             <div>
                 <TiWarning className="text-red-500 text-[190px] " />
             </div>
-            <h1 className="text-4xl font-bold mb-4 text-black">404 - Page introuvable</h1>
-            <FaRobot className="text-4xl" />
+            <h1 className="text-4xl font-bold mb-4 text-black">404 - Page not found</h1>
+            <FaRobot className="text-4xl text-black " />
+            <ShowPath />
             <p className="text-gray-600 mb-6">Oups, la page que vous cherchez n’existe pas.</p>
             <Link
                 href="/"
