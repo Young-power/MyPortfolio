@@ -21,7 +21,7 @@ const LibrarieCard = ({ name, description,  screenshot, status, icons,website, o
                 <Image src={screenshot?.photo || ''}
                     width={1200}
                     height={700} alt={screenshot?.alt || "no found img"}
-                    className='w-full h-auto rounded-xl object-cover transition-transform duration-500 group-hover:scale-105 '
+                    className='w-fit h-auto rounded-xl object-cover transition-transform duration-500 group-hover:scale-105 '
                 />
             </div>
 
