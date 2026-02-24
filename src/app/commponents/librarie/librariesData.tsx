@@ -41,7 +41,9 @@ export type libType = {
         alt: string,
         photo: string
     }
-    status: "active" | "maintenance"
+    status: "active" | "maintenance",
+    width?:number,
+    height?: number
 }
 export const libraries: libType[] = [
     {
@@ -102,7 +104,10 @@ export const libraries: libType[] = [
 
         ],
 
-        status: "active"
+        status: "active",
+        width:1200,
+    height:700
+
     },
     {
     id: 2,
@@ -159,6 +164,67 @@ export const libraries: libType[] = [
         }
     ],
 
-    status: "active"
+    status: "active",
+    width:200,
+    height:100
+}
+, {
+    id: 3,
+    name: "Next Mahine Icon",
+    shortDescription: "Une bibliothèque d’icônes SVG moderne pour Next.js et React, optimisée pour les Server Components",
+    description:
+        "Une collection d’icônes SVG conçue pour Next.js (App Router) et React. Optimisée pour les React Server Components (RSC), cette bibliothèque offre des composants légers, personnalisables et sans JavaScript côté client.",
+
+    command: "npm install next-mahine-icon",
+    npm: "https://www.npmjs.com/package/next-mahine-icon",
+    github: "https://github.com/Young-power/next-mahine-icon",
+    website: "https://next-mahine-icon-doc.vercel.app/",
+
+    version: "1.0.0",
+    stars: 5, // optionnel (mets ton vrai score GitHub si tu veux)
+
+    tags: ["nextjs", "icons", "svg", "rsc", "react", "ui"],
+    features: [
+        "SVG icons as React components",
+        "Optimized for React Server Components (RSC)",
+        "Zero client-side JavaScript",
+        "Fully customizable (size, color, props)",
+        "Lightweight and fast",
+        "Easy integration with Next.js App Router"
+    ],
+    creatorLogo: "/assets/Mahine.jpg",
+
+    author: "Mahaman Mahine Kamagaté",
+    createdAt: "2026-02-23",
+    license: "MIT",
+
+    logo: "/assets/lib2.png",
+
+    screenshot: {
+        alt: "picture of next-mahine-icon",
+        photo: "/assets/lib2.png"
+    },
+
+    preview: {
+        alt: "preview pic",
+        photo: "/assets/preview2.png"
+    },
+
+    icons: [
+        {
+            type: "npm",
+            logo: <DiNpm key="npm" className="text-3xl text-red-500 hover:text-red-700 transition-colors" />,
+            link: "https://www.npmjs.com/package/next-mahine-icon"
+        },
+        {
+            type: "github",
+            logo: <FaGithub key="github" className="text-2xl hover:text-blue-500 transition-colors" />,
+            link: "https://github.com/Young-power/next-mahine-icon"
+        }
+    ],
+
+    status: "maintenance",
+    width:200,
+    height:100
 }
 ]

@@ -9,7 +9,7 @@ type Props = libType & {
     onclick: () => void;
 }
 
-const LibrarieCard = ({ name, description,  screenshot, status, icons,website, onclick }: Props) => {
+const LibrarieCard = ({ name, description,  screenshot, status, icons,website,width,height, onclick }: Props) => {
 
 
 
@@ -17,7 +17,7 @@ const LibrarieCard = ({ name, description,  screenshot, status, icons,website, o
     return (
         <div onClick={onclick} className='flex border  flex-col w-full px-3 lg:w-[400px] overflow-hidden hover:cursor-pointer bg-gray-50  border-gray-300 rounded-2xl group  transition-transform duration-300 hover:translate-y-2 shadow-md hover:shadow-2xl'>
            
-            <div className=' overflow-hidden pt-3'>
+            <div className=' overflow-hidden pt-3 flex justify-center items-center'>
                 <Image src={screenshot?.photo || ''}
                     width={1200}
                     height={700} alt={screenshot?.alt || "no found img"}
