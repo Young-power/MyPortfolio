@@ -9,7 +9,7 @@ type Props = libType & {
     onclick: () => void;
 }
 
-const LibrarieCard = ({ name, description,  screenshot, status, icons,website,width,height, onclick }: Props) => {
+const LibrarieCard = ({ name, description,  screenshot, status, icons,website, onclick }: Props) => {
 
 
 

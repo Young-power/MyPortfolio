@@ -140,11 +140,11 @@ export const libraries: libType[] = [
     createdAt: "2026-02-23",
     license: "MIT",
 
-    logo: "/assets/lib2.png",
+    logo: "/assets/bib2.png",
 
     screenshot: {
         alt: "picture of next-mahine-icon",
-        photo: "/assets/lib2.png"
+        photo: "/assets/bib2.png"
     },
 
     preview: {
@@ -166,8 +166,7 @@ export const libraries: libType[] = [
     ],
 
     status: "active",
-    width:200,
-    height:100
+   
 }
 , {
     id: 3,
@@ -225,7 +224,6 @@ export const libraries: libType[] = [
     ],
 
     status: "maintenance",
-    width:200,
-    height:100
+   
 }
 ]
