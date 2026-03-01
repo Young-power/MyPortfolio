@@ -3,7 +3,7 @@ import ButtonTop from "@/app/components/goTop/ButtonTop"
 
 const page = () => {
   return (
-    <div className=' relative min-h-screen  flex '> 
+    <div className=' relative bg-white min-h-screen  flex '> 
         <About />
         <ButtonTop />
     </div>

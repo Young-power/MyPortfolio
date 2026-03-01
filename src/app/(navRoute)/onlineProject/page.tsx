@@ -7,7 +7,7 @@ import MyTypewriter from "./TypeWriter"
 const Page = () => {
   return (
 
-    <div className=' relative min-h-screen  '>
+    <div className=' relative min-h-screen bg-white  '>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-x-5 px-10 py-7  ">
         <OnlineProjectCard
           title="Mon premier site web "

@@ -39,7 +39,7 @@ const Page = () => {
 
     return (
 
-        <div className=' relative min-h-screen  '>
+        <div className=' relative min-h-screen bg-white  '>
             <ToastContainer
                 position="top-center"
                 autoClose={3000}

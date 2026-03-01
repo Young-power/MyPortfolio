@@ -5,7 +5,7 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div className="w-full bg-white dark:bg-zinc-800 transition-colors duration-300">
+        <div className="w-full  transition-colors duration-300">
             {/* Top Header */}
             <TopHead />
 

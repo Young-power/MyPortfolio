@@ -31,7 +31,7 @@ const Page = () => {
 
 
   return (
-    <div className=' relative min-h-screen  flex justify-center items-center'>
+    <div className=' relative bg-white min-h-screen  flex justify-center items-center'>
       <ToastContainer
         position="top-center"
         autoClose={3000}

@@ -3,7 +3,7 @@ import MyMapWrapper from '@/app/components/map/MyMapWrapper'
 
 const page = () => {
   return (
-    <div className='w-full'>
+    <div className='w-full bg-white py-7'>
       <Mail />
       <MyMapWrapper />
     </div>
