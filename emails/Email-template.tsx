@@ -43,7 +43,7 @@ export const EmailTemplate = ({
     projectTitle,
 }: EmailProps) => {
     const previewText = `Bienvenue chez M2K Group, ${name} ! Nous avons bien reçu votre idée de projet.`;
-    const logoSrc = "https://www.mahine.site/assets/m2kgroup/m2kGroup.png";
+    const logoSrc = "https://www.mahine.site/assets/m2kgroup/mkgroup.png";
     const avatarSrc = "https://www.mahine.site/assets/Mahine.jpg"; // Vous pouvez remplacer par une image plus générique si besoin
 
     return (
@@ -58,8 +58,8 @@ export const EmailTemplate = ({
                         <Section className="text-center mb-6">
                             <Img
                                 src={logoSrc}
-                                width="96"
-                                height="30"
+                                width="150"
+                                height="150"
                                 alt="M2K Group"
                                 className="mx-auto"
                             />
