@@ -18,7 +18,7 @@ const Footer = () => {
     const getVersion = async () => {
 
         try {
-            const res = await fetch("../../api/version");
+            const res = await fetch("/api/version");
             const data = await res.json();
             setVersion(data.version)
 

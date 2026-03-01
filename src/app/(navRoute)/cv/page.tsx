@@ -1,7 +1,7 @@
 "use client";
 
-import Captcha from '@/app/commponents/cv/Captcha'
-import Cv from '@/app/commponents/cv/Cv'
+import Captcha from '@/app/components/cv/Captcha'
+import Cv from '@/app/components/cv/Cv'
 import { useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify'
 import { AnimatePresence } from "framer-motion";

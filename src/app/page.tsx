@@ -1,14 +1,14 @@
-import CircleContainer from "./commponents/circle/CircleContainer";
-import ButtonTop from "./commponents/goTop/ButtonTop";
-import Hero from "./commponents/hero/Hero";
-import MyMapWrapper from "./commponents/map/MyMapWrapper";
-import Project from "./commponents/project/Project";
-import Project2 from "./commponents/project/Project2";
-import Project3 from "./commponents/project/Project3";
-import Projet4 from "./commponents/project/Projet4";
-import SchoolCarieer from "./commponents/school/SchoolCarieer";
-import SkillSender from "./commponents/skills/SkillSender";
-import Title from "./commponents/Title";
+import CircleContainer from "./components/circle/CircleContainer";
+import ButtonTop from "./components/goTop/ButtonTop";
+import Hero from "./components/hero/Hero";
+import MyMapWrapper from "./components/map/MyMapWrapper";
+import Project from "./components/project/Project";
+import Project2 from "./components/project/Project2";
+import Project3 from "./components/project/Project3";
+import Projet4 from "./components/project/Projet4";
+import SchoolCarieer from "./components/school/SchoolCarieer";
+import SkillSender from "./components/skills/SkillSender";
+import Title from "./components/Title";
 
 export default function Home() {
 

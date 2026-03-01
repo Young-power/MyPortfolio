@@ -14,6 +14,8 @@ const NavbarPhone = () => {
     { href: "/onlineProject", label: "Online_Project" },
     { href: "/library", label: "Libraries" },
     { href: "/cv", label: "CV" },
+    { href: "/m2kGroup", label: "M²K-Group" },
+
   ];
 
   return (

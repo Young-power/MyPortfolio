@@ -1,14 +1,24 @@
+"use client";
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { FaGithub } from 'react-icons/fa6';
 import TippyShow from '../tippy/TippyShow';
 import CardMotion from '../motion/CardMotion';
 import ZoomElement from '../motion/ZoomElement';
+import { useState } from 'react';
+import Other from './Other';
+import { AnimatePresence } from "framer-motion"
+import { ChevronDown, ChevronRight } from 'next-mahine-icon';
 const NavbarLaptop = () => {
     const pathName = usePathname();
 
+    const [openOther, setOpenOther] = useState<boolean>(false);
+    const handleOpenOther = ():void => {
+        setOpenOther(!openOther)
+
+    }
     return (
-        <nav className="w-full flex justify-center">
+        <nav className="w-full relative flex justify-center ">
 
 
 
@@ -42,13 +52,9 @@ const NavbarLaptop = () => {
                     </li>
                 </CardMotion>
 
-                <CardMotion delay={0.7}>
-                    <li className={`cursor-pointer hover:text-blue-500 duration-300 ease-in-out ${pathName === '/onlineProject' ? "text-blue-500" : null}`}>
-                        <Link href="/onlineProject">Online_Project</Link>
-                    </li>
-                </CardMotion>
+
                 <CardMotion delay={0.8}>
-                    <li className={`cursor-pointer hover:text-blue-500 duration-300 ease-in-out ${pathName === '/librarie' ? "text-blue-500" : null}`}>
+                    <li className={`cursor-pointer hover:text-blue-500 duration-300 ease-in-out ${pathName === '/library' ? "text-blue-500" : null}`}>
                         <Link href="/library">Libraries</Link>
                     </li>
                 </CardMotion>
@@ -59,6 +65,22 @@ const NavbarLaptop = () => {
                         <Link href="/cv">CV</Link>
                     </li>
                 </CardMotion>
+                <CardMotion delay={0.9}>
+                    <li onClick={handleOpenOther} className={`cursor-pointer hover:text-blue-500 duration-300 ease-in-out ${pathName === '/onlineProject' || pathName === "/m2kGroup" ? "text-blue-500" : null}`}>
+                        Other  {openOther ? <ChevronDown className='inline-flex' /> : <ChevronRight className='inline-flex' />}
+                    </li>
+
+                </CardMotion>
+
+
+                <AnimatePresence>
+                    {
+                        openOther &&
+                        <Other />
+                    }
+                </AnimatePresence>
+
+
 
             </ul>
         </nav >

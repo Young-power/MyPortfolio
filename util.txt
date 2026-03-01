@@ -1,49 +1,154 @@
- {isDark ? (
-        <BsLightbulbOffFill className="text-gray-300 text-2xl md:text-3xl" />
-      ) : (
-        <BsLightbulbFill className="text-yellow-400 text-2xl md:text-3xl" />
+"use server";
+
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+export async function submitForm(formData: FormData) {
+  const name = formData.get("name") as string;
+  const email = formData.get("email") as string;
+  const phone = formData.get("phone") as string;
+  const describe = formData.get("describe") as string;
+
+  try {
+    // 📩 1. EMAIL POUR TOI (notification)
+    await resend.emails.send({
+      from: "M²K Group <onboarding@resend.dev>",
+      to: "tonemail@gmail.com",
+      subject: "🚀 Nouvelle idée de projet reçue",
+      html: `
+        <h2>Nouveau projet 🚀</h2>
+        <p><strong>Nom:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Téléphone:</strong> ${phone}</p>
+        <p><strong>Description:</strong> ${describe}</p>
+      `,
+    });
+
+    // 📩 2. EMAIL POUR LE CLIENT (confirmation)
+    await resend.emails.send({
+      from: "M²K Group <onboarding@resend.dev>",
+      to: email,
+      subject: "✅ Votre idée de projet a été reçue",
+      html: `
+        <h2>Merci ${name} 🙌</h2>
+        <p>Nous avons bien reçu votre idée de projet.</p>
+
+        <p>Notre équipe va l’analyser et vous recontacter rapidement.</p>
+
+        <hr/>
+
+        <h3>📌 Récapitulatif :</h3>
+        <p><strong>Nom:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Téléphone:</strong> ${phone}</p>
+        <p><strong>Description:</strong> ${describe}</p>
+
+        <br/>
+
+        <p>🚀 M²K Group – Construisons votre vision digitale.</p>
+      `,
+    });
+
+    return {
+      success: true,
+    };
+
+  } catch (error) {
+    console.error(error);
+    throw new Error("Erreur lors de l'envoi des emails");
+  }
+}
+
+
+
+
+
+
+
+
+<Tailwind
+      config={{
+        presets: [pixelBasedPreset],
+        theme: {
+          extend: {
+            colors: {
+              brand: "#007291",
+            },
+          },
+        },
+      }}
+    >
+      <Button
+        href="https://example.com"
+        className="bg-brand px-3 py-2 font-medium leading-4 text-white"
+      >
+        Click me
+      </Button>
+    </Tailwind>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"use client";
+import { useState } from "react";
+
+export default function FormExample() {
+  const [submittedData, setSubmittedData] = useState<any>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault(); // Empêche le rechargement de la page
+
+    const formData = new FormData(e.currentTarget); // Récupère tous les champs
+    const data = Object.fromEntries(formData.entries()); // Convertit en objet JS
+
+    console.log(data); // Affiche dans la console
+    setSubmittedData(data); // Optionnel : stocker dans un state
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <input name="name" placeholder="Nom" className="input" required />
+      <input name="email" type="email" placeholder="Email" className="input" required />
+      <input name="phone" placeholder="Téléphone" className="input" required />
+      <textarea name="bio" placeholder="Bio" className="textarea"></textarea>
+
+      <button type="submit" className="btn btn-primary">
+        Envoyer
+      </button>
+
+      {submittedData && (
+        <pre className="mt-4 bg-gray-100 p-2 rounded">
+          {JSON.stringify(submittedData, null, 2)}
+        </pre>
       )}
-
-
-
-      Voici les sections essentielles que ces sites ont toutes :
-
-📍 Page d’accueil
-
-Présentation courte
-
-Énoncé du problème que l’outil résout
-
-📍 Installation
-
-Commandes simples (npm install …)
-
-📍 Guides d’utilisation
-
-Exemples concrets
-
-Cas d’usage
-
-📍 API / Référence
-
-Fonctions exposées
-
-Paramètres
-
-Types
-
-📍 Exemples
-
-Code prêt à copier/coller
-
-📍 FAQ / Aide
-
-Erreurs communes
-
-Solutions
-
-📍 Support
-
-Lien GitHub
-
-Sponsoring / Buy Me a Coffee (optionnel)
+    </form>
+  );
+}

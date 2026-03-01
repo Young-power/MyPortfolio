@@ -17,6 +17,11 @@
 /.next/
 /out/
 
+#all env
+/.env.production
+/.env.local
+/.envgit
+
 # production
 /build
 

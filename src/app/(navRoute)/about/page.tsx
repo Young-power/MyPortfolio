@@ -1,5 +1,5 @@
-import About from "@/app/commponents/about/About"
-import ButtonTop from "@/app/commponents/goTop/ButtonTop"
+import About from "@/app/components/about/About"
+import ButtonTop from "@/app/components/goTop/ButtonTop"
 
 const page = () => {
   return (

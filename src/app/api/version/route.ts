@@ -3,6 +3,6 @@ import pkg from "../../../../package.json" assert { type: "json" };
 
 
 
-export function GET(){
+export  function GET(){
     return NextResponse.json({version: pkg.version});
 }

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { BsLightbulbFill, BsLightbulbOffFill } from "react-icons/bs";
-import CardMotion from "@/app/commponents/motion/CardMotion";
+import CardMotion from "@/app/components/motion/CardMotion";
 
 const ThemeToggle = () => {
   const { theme, setTheme, systemTheme } = useTheme();

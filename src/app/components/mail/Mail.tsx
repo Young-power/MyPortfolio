@@ -1,4 +1,3 @@
-import React from 'react'
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoCall } from "react-icons/io5";
 import { FaLinkedinIn } from "react-icons/fa";

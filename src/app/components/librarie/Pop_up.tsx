@@ -1,7 +1,7 @@
 "use client"
 
 import { AiOutlineCloseCircle } from "react-icons/ai"
-import { iconType, libType } from '@/app/commponents/librarie/librariesData'
+import { iconType, libType } from '@/app/components/librarie/librariesData'
 import Link from "next/link";
 import { TbWorld } from "react-icons/tb";
 import { toast } from "react-toastify";

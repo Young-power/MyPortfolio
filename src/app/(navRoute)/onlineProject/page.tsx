@@ -1,4 +1,4 @@
-import OnlineProjectCard from "@/app/commponents/onlineProject/OnlineProjectCard"
+import OnlineProjectCard from "@/app/components/onlineProject/OnlineProjectCard"
 import Image from "next/image"
 import { FaJsSquare } from "react-icons/fa"
 import { IoLogoCss3, IoLogoHtml5 } from "react-icons/io"

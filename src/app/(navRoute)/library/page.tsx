@@ -1,7 +1,7 @@
 "use client"
-import LibrarieCard from '@/app/commponents/librarie/LibrarieCard'
-import { libraries, libType } from '@/app/commponents/librarie/librariesData'
-import Pop_up from '@/app/commponents/librarie/Pop_up'
+import LibrarieCard from '@/app/components/librarie/LibrarieCard'
+import { libraries, libType } from '@/app/components/librarie/librariesData'
+import Pop_up from '@/app/components/librarie/Pop_up'
 import Image from 'next/image'
 import { useState } from 'react'
 import { ToastContainer } from 'react-toastify'
