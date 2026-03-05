@@ -23,7 +23,7 @@ export const SendEmailToMe = ({ name, email, phone, project, description }: Prop
     return (
         <Html>
             <Body className="bg-gray-100 font-sans p-6">
-                <Container className="bg-white rounded-xl shadow-lg max-w-[600px] mx-auto p-6">
+                <Container className="bg-white rounded-xl shadow-lg max-w-150 mx-auto p-6">
 
                     {/* Logo */}
                     <Section className="text-center mb-6">

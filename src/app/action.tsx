@@ -5,6 +5,7 @@ import { Resend } from "resend";
 import EmailTemplate from "../../emails/Email-template";
 import { FormDataType } from "./components/m2kgroup/Form";
 import { SendEmailToMe } from "../../emails/SendEmailTome";
+import { resolve } from "path";
 
 type FormResponse = {
   success: boolean,
@@ -15,6 +16,8 @@ type FormResponse = {
 export async function submitForm(data: FormDataType): Promise<FormResponse> {
 
   const { name, phone, email, project, describe } = data;
+
+  await new Promise(resolve => setTimeout(resolve, 5000));
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);

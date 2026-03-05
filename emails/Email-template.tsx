@@ -53,7 +53,7 @@ export const EmailTemplate = ({
                 <Body className="bg-gray-100 font-sans py-10">
                     <Preview>{previewText}</Preview>
 
-                    <Container className="mx-auto bg-white rounded-xl shadow-lg p-8 max-w-[600px]">
+                    <Container className="mx-auto bg-white rounded-xl shadow-lg p-8 max-w-150">
                         {/* Logo */}
                         <Section className="text-center mb-6">
                             <Img

@@ -1,10 +1,12 @@
 "use client";
 import Image from "next/image"
 import { useState, useTransition } from "react";
+import { useFormStatus } from "react-dom";
 import { submitForm } from "@/app/action";
 import Success from "../message_success_error/Success";
 import { AnimatePresence, motion } from "framer-motion";
 import ErrorMessage from "../message_success_error/ErrorMessage";
+import Loading from "@/lib/Loading";
 
 export type FormDataType = {
   name: string;
@@ -21,8 +23,8 @@ const Form = () => {
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
   const [showMessage, setShowMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
-
-  const [isPending, startTransition] = useTransition()
+  const [loading, setLoading] = useState(false);
+  const [isPending, startTransition] = useTransition();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,44 +32,51 @@ const Form = () => {
 
 
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Empêche le rechargement de la page
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    startTransition(async () => {
+    // Validation AVANT loading
+    const isFormInvalid =
+      !form.name.trim() ||
+      !form.email.trim() ||
+      !form.phone.trim() ||
+      !form.project.trim() ||
+      !form.describe.trim();
 
-      //important condition before to call server action
-      const isFormInvalid =
-        !form.name.trim() ||
-        !form.email.trim() ||
-        !form.phone.trim() ||
-        !form.project.trim() ||
-        !form.describe.trim();
+    if (isFormInvalid) {
+      setResponseMessage("Tous les champs doivent être remplis");
+      setShowErrorMessage(true);
+      setShowMessage(false);
+      setTimeout(() => setShowErrorMessage(false), 5000);
+      return;
+    }
 
-      if (isFormInvalid) {
-        setResponseMessage("Tous les champs doivent être remplis");
-        setShowErrorMessage(true);
-        setShowMessage(false);
-        setTimeout(() => setShowErrorMessage(false), 5000);
-        return;
-      }
+    // ✅ On démarre le loading ici
+    setLoading(true);
 
-      //if evrything is ok we call the server action
+    try {
       const res = await submitForm(form);
 
       if (res.success) {
-        setResponseMessage(res.message)
+        setResponseMessage(res.message);
         setForm({ name: '', email: '', phone: '', project: '', describe: '' });
         setShowMessage(true);
-        setShowErrorMessage(false); // cacher erreur si succès
+        setShowErrorMessage(false);
         setTimeout(() => setShowMessage(false), 5000);
       } else {
-        setResponseMessage(res.message)
-        setShowErrorMessage(true); // afficher message d'erreur
-        setShowMessage(false);      // cacher message de succès
+        setResponseMessage(res.message);
+        setShowErrorMessage(true);
+        setShowMessage(false);
         setTimeout(() => setShowErrorMessage(false), 5000);
       }
-    })
 
+    } catch (error) {
+      setResponseMessage("Une erreur est survenue");
+      setShowErrorMessage(true);
+    } finally {
+      // ✅ On arrête le loading ici
+      setLoading(false);
+    }
   };
   return (
     <div className="w-full flex lg:justify-center lg:items-center">
@@ -285,9 +294,13 @@ const Form = () => {
             {/* BUTTON */}
             <button
               type="submit"
-              className={`btn btn-primary font-extrabold  text-md lg:text-lg text-white inline-flex justify-center items-center min-w-[120px]`}
+
+              className={`btn btn-primary font-extrabold ${loading ? "bg-blue-400" : ""}  text-md lg:text-lg text-white inline-flex justify-center items-center min-w-[120px]`}
             >
-              {isPending ? "Envoi.." : "Envoyer"}
+              {loading ? (<>
+                Envoi <Loading />
+              </>) :
+                "Envoyer"}
             </button>
           </fieldset>
         </form>

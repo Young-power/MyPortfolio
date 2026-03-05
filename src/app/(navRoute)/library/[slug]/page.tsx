@@ -2,7 +2,9 @@ import { redirect, notFound } from "next/navigation";
 
 const libraries: Record<string, string> = {
   "next-mahine-inspector.com": "https://next-mahine-rsc-doc.vercel.app/",
+  "mahine-icon": "https://next-mahine-icon-doc.vercel.app/"
 };
+
 
 const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
   
