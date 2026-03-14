@@ -54,7 +54,7 @@ C’est simple : branchez-la en USB (plug-and-play), et elle fonctionne immédia
 
     ],
     stock: {
-      status: "fini",
+      status: "disponible",
       quantity: 5
     },
     price: 6300
