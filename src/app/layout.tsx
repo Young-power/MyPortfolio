@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/nav/Navbar";
-import Footer from "./components/footer/Footer";
 import { ThemeProvider } from "@/context/theme-provider";
 //import { ThemeProvider } from "@/context/DarkModeProvider";
 
@@ -17,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mahine-k.com",
+  title: "Mahine.site",
   description: "this porfolio is created to show all my skills",
   icons: {
     icon: "/assets/Mahine.jpg",
@@ -34,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning >
 
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-zinc-800`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased `}>
 
         <ThemeProvider
           attribute="class"
@@ -42,10 +40,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          
 
           {children}
-          <Footer />
 
         </ThemeProvider>
 

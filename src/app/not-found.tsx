@@ -2,9 +2,13 @@ import ShowPath from "@/util/ShowPath";
 import Link from "next/link";
 import { FaRobot } from "react-icons/fa6";
 import { TiWarning } from "react-icons/ti";
+import Navbar from "./components/nav/Navbar";
+import Footer from "./components/footer/Footer";
 export default function NotFound() {
   
     return (
+        <>
+        <Navbar />
         <div className="min-h-screen flex flex-col justify-center items-center text-center">
             <div>
                 <TiWarning className="text-red-500 text-[190px] " />
@@ -20,5 +24,7 @@ export default function NotFound() {
                 Retour à l’accueil
             </Link>
         </div>
+        <Footer />
+        </>
     );
 }

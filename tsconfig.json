@@ -34,7 +34,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
+, "src/app/store.action.tsx"  ],
   "exclude": [
     "node_modules",
     ".next"

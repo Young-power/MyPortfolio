@@ -1,11 +1,9 @@
-// submitForm.tsx
 "use server";
 
 import { Resend } from "resend";
 import EmailTemplate from "../../emails/Email-template";
 import { FormDataType } from "./components/m2kgroup/Form";
 import { SendEmailToMe } from "../../emails/SendEmailTome";
-import { resolve } from "path";
 
 type FormResponse = {
   success: boolean,
@@ -42,7 +40,7 @@ export async function submitForm(data: FormDataType): Promise<FormResponse> {
 
 
     return { success: true, message: "Formulaire envoyé, vérifiez votre boîte mail!" }
-  } catch (error) {
+  } catch {
 
     return { success: false, message: "Formulaire non envoyé." }
   }

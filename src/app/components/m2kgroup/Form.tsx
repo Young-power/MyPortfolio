@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image"
-import { useState, useTransition } from "react";
-import { useFormStatus } from "react-dom";
+import { useState } from "react";
 import { submitForm } from "@/app/action";
 import Success from "../message_success_error/Success";
 import { AnimatePresence, motion } from "framer-motion";
@@ -24,7 +23,6 @@ const Form = () => {
   const [showMessage, setShowMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [isPending, startTransition] = useTransition();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -70,7 +68,7 @@ const Form = () => {
         setTimeout(() => setShowErrorMessage(false), 5000);
       }
 
-    } catch (error) {
+    } catch {
       setResponseMessage("Une erreur est survenue");
       setShowErrorMessage(true);
     } finally {
@@ -81,7 +79,7 @@ const Form = () => {
   return (
     <div className="w-full flex lg:justify-center lg:items-center">
       {/* Image */}
-      <div className="w-full lg:w-[500px] xl:w-[740px] mb-6 lg:mb-0 shrink-0 px-3 hidden lg:block">
+      <div className="w-full lg:w-125 xl:w-185 mb-6 lg:mb-0 shrink-0 px-3 hidden lg:block">
         <Image
           src="/assets/m2kgroup/formIMG.png"
           width={1200}
@@ -97,7 +95,7 @@ const Form = () => {
           Formulaire de soumission de projet
         </h2>
         {/* Image */}
-        <div className="w-full lg:w-[500px] mb-6 lg:mb-0 shrink-0 px-3 lg:hidden">
+        <div className="w-full lg:w-125 mb-6 lg:mb-0 shrink-0 px-3 lg:hidden">
           <Image
             src="/assets/m2kgroup/formIMG.png"
             width={1200}
@@ -294,8 +292,8 @@ const Form = () => {
             {/* BUTTON */}
             <button
               type="submit"
-
-              className={`btn btn-primary font-extrabold ${loading ? "bg-blue-400" : ""}  text-md lg:text-lg text-white inline-flex justify-center items-center min-w-[120px]`}
+              disabled={loading}
+              className={`btn btn-primary font-extrabold ${loading ? "bg-blue-400" : ""}  text-md lg:text-lg text-white inline-flex justify-center items-center min-w-30`}
             >
               {loading ? (<>
                 Envoi <Loading />

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import CardMotion from '../motion/CardMotion'
 import { usePathname } from 'next/navigation';
 import ZoomElement from '../motion/ZoomElement';
-import { FiExternalLink } from "react-icons/fi";
 import { SquareArrowOutUpRight } from 'next-mahine-icon';
 
 const Other = () => {

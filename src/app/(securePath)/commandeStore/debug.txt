@@ -1,0 +1,245 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { notFound, useSearchParams } from "next/navigation";
+import { dataArticle } from "@/app/components/m2kgroup/store/dataArticle";
+import { useFormState } from "react-dom";
+import SubmitBtn from "./SubmitBtn";
+import { AnimatePresence, motion } from "framer-motion";
+import Success from "@/app/components/message_success_error/Success";
+import ErrorMessage from "@/app/components/message_success_error/ErrorMessage";
+import { formData } from "@/app/store.action";
+
+const Page = () => {
+  const [state, formAction] = useFormState(formData, null);
+  const [showSuccessMessage, setShowSuccessMessage] = useState<boolean>(false);
+  const [showErrorMessage, setShowErrorMessage] = useState<boolean>(false);
+  const [quantity, setQuantity] = useState<number>(1);
+
+
+  const searchParams = useSearchParams();
+  const productId = searchParams.get("productId");
+
+
+  if (!productId) return notFound();
+
+  const product = dataArticle.find((item) => item.id === Number(productId));
+  if (!product) return notFound();
+
+  // Gestion de la quantité et calcul du total
+
+  const total = product.price * quantity;
+
+  if (quantity > product.stock.quantity) {
+    setQuantity(product.stock.quantity);
+  }
+
+
+  useEffect(() => {
+    if (state?.success) {
+      setShowSuccessMessage(true);
+      setShowErrorMessage(false);
+
+      const timer = setTimeout(() => {
+        setShowSuccessMessage(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+
+    if (state?.error) {
+      setShowErrorMessage(true);
+      setShowSuccessMessage(false);
+
+      const timer = setTimeout(() => {
+        setShowErrorMessage(false);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [state]);
+
+  return (
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto">
+        {/* En-tête de page */}
+        <h1 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-8">
+          Finalisez votre commande
+        </h1>
+
+        {/* Carte principale */}
+        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
+          <div className="md:flex">
+            {/* Partie gauche : présentation du produit */}
+            <div className="md:w-2/5 bg-linear-to-br from-blue-600 via-blue-700 to-indigo-800 p-8 text-white flex flex-col">
+              <div className="relative h-48 md:h-56 w-full mb-6 rounded-xl overflow-hidden bg-white/10 backdrop-blur-sm">
+                <Image
+                  src={product.images[0]?.link || "/placeholder.jpg"}
+                  alt={product.name}
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+
+              <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
+              <p className="text-blue-100 text-sm mb-4 line-clamp-3">
+                {product.description}
+              </p>
+
+              <div className="mt-auto">
+                <div className="flex items-center justify-between">
+                  <span className="text-3xl font-bold">{product.price} CFA</span>
+                  <span
+                    className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${product.stock.status === "disponible"
+                      ? "bg-green-400 text-green-900"
+                      : "bg-orange-400 text-orange-900"
+                      }`}
+                  >
+                    {product.stock.status}
+                  </span>
+                </div>
+                {product.stock.quantity > 0 && (
+                  <p className="text-blue-200 text-sm mt-2">
+                    {product.stock.quantity} unité{product.stock.quantity > 1 ? "s" : ""} en stock
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Partie droite : formulaire de commande */}
+            <div className="md:w-3/5 p-8 bg-white">
+              <form action={formAction} noValidate className="space-y-6">
+
+                {/* Champ Nom */}
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Nom complet <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    placeholder="exemple: koffi bernard"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition shadow-sm"
+                  />
+                </div>
+
+                {/* Champ Email */}
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="mahine@exemple.com"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition shadow-sm"
+                  />
+                </div>
+
+                {/* Champ Téléphone */}
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Téléphone <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    pattern="[0-9]+"
+                    title="Uniquement des chiffres"
+                    placeholder="0141311165"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition shadow-sm"
+                  />
+                </div>
+
+                {/* Champ Commune & Quartier */}
+                <div>
+                  <label htmlFor="commune" className="block text-sm font-medium text-gray-700 mb-1">
+                    Commune & Quartier <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="commune"
+                    name="neighborhood"
+                    required
+                    placeholder="Ex: Abidjan, Cocody, Riviera"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition shadow-sm"
+                  />
+                </div>
+
+                {/* Quantité et total dynamique */}
+                <div className="flex flex-col sm:flex-row sm:items-end gap-4">
+                  <div className="flex-1">
+                    <label htmlFor="quantity" className="block text-sm font-medium text-gray-700 mb-1">
+                      Quantité <span className="text-red-500">*</span>
+                    </label>
+                    <input
+                      type="number"
+                      id="quantity"
+                      name="quantity"
+                      min="1"
+                      max={product.stock.quantity}
+                      value={quantity}
+                      onChange={(e) => setQuantity(Math.max(1, Number(e.target.value)))}
+                      required
+                      className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition shadow-sm"
+                    />
+                  </div>
+                  <div className="text-right pb-3">
+                    <p className="text-sm text-gray-500">Total</p>
+                    <p className="text-2xl font-extrabold text-gray-800">{total} CFA</p>
+                  </div>
+                </div>
+                <input type="hidden" name="img" value={product.images[0].link} />
+                <input type="hidden" name="nameProduct" value={product.name} />
+                <input type="hidden" name="totalPrice" value={total} />
+                <AnimatePresence>
+                  {showSuccessMessage &&
+                    <motion.div
+                      key="success-message"
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -50 }}
+                      transition={{ duration: 0.5 }} // tu peux ajuster la durée
+                    >
+                      {state?.success && <Success message={state.success} />}
+
+                    </motion.div>}
+
+                </AnimatePresence>
+
+                <AnimatePresence>
+                  {showErrorMessage &&
+                    <motion.div
+                      key="success-message"
+                      initial={{ opacity: 0, x: -50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -50 }}
+                      transition={{ duration: 0.5 }} // tu peux ajuster la durée
+                    >
+                      {state?.error &&
+                        <ErrorMessage message={state.error} />}
+
+                    </motion.div>}
+
+                </AnimatePresence>
+                {/* Bouton de confirmation */}
+                <SubmitBtn />
+              </form>
+            </div>
+          </div>
+        </div>
+
+        {/* Note de bas de page (facultatif) */}
+        <p className="text-center text-gray-500 text-sm mt-6">
+          Tous les champs sont obligatoires. Vous recevrez un email de confirmation.
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Page;

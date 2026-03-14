@@ -1,16 +1,17 @@
 import { LockKeyhole } from 'next-mahine-icon'
 import Image from 'next/image'
 import Form from './Form'
+import { miniTitleFont } from '@/font/font'
 
 const Solution = () => {
     return (
-        <section className='text-black'>
+        <section className='text-black' id="solutuion">
             <div className="mt-6 flex flex-col justify-center items-center ">
-                <h1 className="text-center text-black dark:text-white text-xl lg:text-3xl font-bold">
+                <h1 className={`text-center ${miniTitleFont.className} text-black mb-3 dark:text-white text-xl lg:text-3xl font-bold`}>
                     M²K-Group Solutions
                 </h1>
                 {/* Image */}
-                <div className="w-full lg:w-[500px] mb-6 lg:mb-0 shrink-0 px-3">
+                <div className="w-full lg:w-125 mb-6 lg:mb-0 shrink-0 px-3">
                     <Image
                         src="/assets/m2kgroup/solution.png"
                         width={1200}
@@ -32,16 +33,16 @@ const Solution = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     {/* Web */}
-                    <div className="p-6 rounded-xl shadow-lg bg-white dark:bg-zinc-900">
-                        <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">
-                            🌐 Création de Sites Web
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-300">
-                            Sites vitrines, e-commerce, plateformes sur mesure.
-                            Nous développons des solutions rapides, modernes et optimisées SEO
-                            adaptées au marché.
-                        </p>
-                    </div>
+                        <div className="p-6 rounded-xl shadow-lg bg-white dark:bg-zinc-900">
+                            <h3 className="text-xl font-semibold mb-3 text-black dark:text-white">
+                                🌐 Création de Sites Web
+                            </h3>
+                            <p className="text-gray-600 dark:text-gray-300">
+                                Sites vitrines, e-commerce, plateformes sur mesure.
+                                Nous développons des solutions rapides, modernes et optimisées SEO
+                                adaptées au marché.
+                            </p>
+                        </div>
 
                     {/* Mobile */}
                     <div className="p-6 rounded-xl shadow-lg bg-white dark:bg-zinc-900">
@@ -153,7 +154,7 @@ const Solution = () => {
                             <div className="flex flex-col items-center gap-2">
                                 <LockKeyhole className="w-8 h-8 text-gray-700 dark:text-gray-200" />
                                 <span className="text-sm font-medium text-gray-700 dark:text-gray-200">
-                                    Bientôt disponible 
+                                    Bientôt disponible
                                 </span>
                             </div>
                         </div>
