@@ -29,11 +29,9 @@ const NavbarPhone = () => {
               <li
 
                 className={`cursor-pointer w-full text-center
-  ${pathName === link.href ? "text-blue-500" : "text-muted-foreground"}
-  hover:text-white hover:bg-linear-to-tl hover:from-blue-600 hover:to-blue-800
-  duration-300 ease-in-out
-`}
-
+                ${pathName === link.href ? "text-blue-500" : "text-muted-foreground"}
+                hover:text-white hover:bg-linear-to-tl hover:from-blue-600 hover:to-blue-800
+                duration-300 ease-in-out`}
               >
                 <Link href={link.href}>{link.label}</Link>
               </li>

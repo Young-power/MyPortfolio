@@ -47,10 +47,10 @@ const Title = () => {
                         Mission
                     </h3>
                     <p className="text-gray-700 dark:text-gray-300 text-base leading-relaxed">
-                        Fournir des solutions numériques complètes en création de sites web et d’applications mobiles,
+                        Fournir des solutions numériques complètes en création de sites web et d&apos;applications mobiles,
                         tout en permettant aux porteurs de projets innovants, même sans moyens financiers, de concrétiser leurs idées
                         via un accompagnement collaboratif et un partage équitable des bénéfices (50/50),
-                        afin de favoriser l’innovation et la transformation digitale accessible à tous.
+                        afin de favoriser l&apos;innovation et la transformation digitale accessible à tous.
                     </p>
                 </div>
 

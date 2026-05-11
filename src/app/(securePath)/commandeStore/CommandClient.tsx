@@ -1,19 +1,20 @@
 "use client";
 
 import { notFound, useSearchParams } from "next/navigation";
-import { dataArticle } from "@/app/components/m2kgroup/store/dataArticle";
+import { ArticleType, dataArticle } from "@/app/components/m2kgroup/store/dataArticle";
 import CommandForm from "./CommandForm";
 import NotFoundProduct from "./NotFoundProduct";
 
 
-export default async function ClientCommandeStore() {
+export default  function ClientCommandeStore() {
   const searchParams = useSearchParams();
 
 
   const productId = searchParams.get("productId");
+
   if (!productId) return notFound();
 
-  const found = dataArticle.find((item) => item.id === Number(productId));
+  const found = dataArticle.find((item:ArticleType) => item.id === Number(productId));
 
 
   if (!found) {

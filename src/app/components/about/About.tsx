@@ -1,14 +1,21 @@
 "use client";
 
-import { FaReact, FaNodeJs, FaDatabase, FaLaptopCode, FaPython } from "react-icons/fa";
+import { FastAPIColor, NestjsColor, NextjsColor, UbuntuColor } from "next-mahine-icon";
+import { FaReact, FaDatabase, FaLaptopCode, FaPython } from "react-icons/fa";
 import { FcLinux } from "react-icons/fc";
+import { IoLogoWindows } from "react-icons/io";
 const skills = [
-  { title: "React", level: 65, icon: <FaReact className="text-blue-500 text-3xl" /> },
+  { title: "React", level: 80, icon: <FaReact className="text-blue-500 text-3xl" /> },
+  { title: "Nextjs", level: 90, icon: <NextjsColor className="text-blue-500 text-3xl bg-white w-10 h-10 rounded-full p-0" /> },
   { title: "Linux", level: 35, icon: <FcLinux className="text-gray-800 text-3xl " /> },
-  { title: "NestJS", level: 54, icon: <FaNodeJs className="text-green-600 text-3xl" /> },
+  { title: "NestJS", level: 70, icon: <NestjsColor className="text-green-600 text-3xl" /> },
   { title: "TypeScript", level: 85, icon: <FaLaptopCode className="text-blue-700 text-3xl" /> },
   { title: "MySQL", level: 80, icon: <FaDatabase className="text-orange-500 text-3xl" /> },
-  { title: "Python", level: 30, icon: <FaPython className="text-yellow-400 text-3xl" /> },
+  { title: "Python", level: 60, icon: <FaPython className="text-yellow-400 text-3xl" /> },
+  { title: "Windows Server22", level: 30, icon: <IoLogoWindows className="text-yellow-400 text-3xl" /> },
+  { title: "Ubuntu Server", level: 35, icon: <UbuntuColor className="text-yellow-400 text-3xl" /> },
+  { title: "FastAPI", level: 75, icon: <FastAPIColor className="text-yellow-400 text-3xl" /> }
+
 ];
 
 export default function About() {
@@ -45,7 +52,7 @@ export default function About() {
           {skills.map((skill) => (
             <div key={skill.title} className="bg-linear-to-br from-stone-800 to-stone-950 p-6 rounded-2xl shadow-lg flex flex-col items-center">
               {skill.icon}
-              
+
               <h3 className="text-xl font-bold mt-3">{skill.title}</h3>
               <div className="w-full bg-gray-700 rounded-full h-4 mt-2">
                 <div
@@ -53,7 +60,7 @@ export default function About() {
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
-              
+
               <span className="mt-2 text-gray-300">{skill.level}%</span>
             </div>
           ))}

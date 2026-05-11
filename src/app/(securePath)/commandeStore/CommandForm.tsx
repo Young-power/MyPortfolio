@@ -8,20 +8,20 @@ import { AnimatePresence, motion } from "framer-motion";
 import Success from "@/app/components/message_success_error/Success";
 import ErrorMessage from "@/app/components/message_success_error/ErrorMessage";
 import { formData } from "@/app/store.action";
-import { ArrowBigLeft} from "next-mahine-icon";
+import { ArrowBigLeft } from "next-mahine-icon";
 import { useRouter } from "next/navigation";
 
 
 type ProducProps = {
   product: ArticleType;
 };
-const CommandForm = ({ product}: ProducProps) => {
+const CommandForm = ({ product }: ProducProps) => {
   const [state, formAction] = useActionState(formData, null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [quantity, setQuantity] = useState(1);
-   const route = useRouter();
- 
+  const route = useRouter();
+
   // ✅ Tous les Hooks doivent être appelés avant tout return conditionnel
   useEffect(() => {
     if (state?.success) {
@@ -40,16 +40,16 @@ const CommandForm = ({ product}: ProducProps) => {
   }, [state]);
 
 
-    const goToArticle = () => route.push("/m2kGroup#store");
-  
-const total = product?.price ? product.price * quantity : 0;
+  const goToArticle = () => route.push("/m2kGroup#store");
+
+  const total = product?.price ? product.price * quantity : 0;
   return (
     <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="-mt-10 lg:mt-0 py-3">
         <ArrowBigLeft
           width={30}
           height={30}
-          className="font-bold cursor-pointer"
+          className="font-bold cursor-pointer  text-black"
           onClick={goToArticle}
         />
       </div>
@@ -81,11 +81,10 @@ const total = product?.price ? product.price * quantity : 0;
                 <div className="flex items-center justify-between">
                   <span className="text-3xl font-bold">{product.price} CFA</span>
                   <span
-                    className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${
-                      product.stock.status === "disponible"
+                    className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${product.stock.status === "disponible"
                         ? "bg-green-400 text-green-900"
                         : "bg-orange-400 text-orange-900"
-                    }`}
+                      }`}
                   >
                     {product.stock.status}
                   </span>

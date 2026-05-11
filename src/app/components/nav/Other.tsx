@@ -6,6 +6,7 @@ import ZoomElement from '../motion/ZoomElement';
 import { SquareArrowOutUpRight } from 'next-mahine-icon';
 
 const Other = () => {
+    
     const pathName = usePathname();
 
     const links = [
