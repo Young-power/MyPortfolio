@@ -14,7 +14,8 @@ export default  function ClientCommandeStore() {
 
   if (!productId) return notFound();
 
-  const found = dataArticle.find((item:ArticleType) => item.id === Number(productId));
+  
+  const found = dataArticle.find((item:ArticleType) => (item.id as number) === Number(productId));
 
 
   if (!found) {

@@ -12,11 +12,10 @@ export default function SecureLayout({ children }: Props) {
         <>
             <Navbar />
             <main className="bg-white dark:bg-zinc-800">
-
                 {/* Ici, pas de Header ni Footer */}
                 <main>{children}</main>
-
             </main>
-            <Footer /></>
+            <Footer />
+        </>
     );
 }

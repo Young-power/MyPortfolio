@@ -19,8 +19,14 @@ const CommandForm = ({ product }: ProducProps) => {
   const [state, formAction] = useActionState(formData, null);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState<number>(1);
   const route = useRouter();
+
+
+
+
+
+
 
   // ✅ Tous les Hooks doivent être appelés avant tout return conditionnel
   useEffect(() => {
@@ -82,8 +88,8 @@ const CommandForm = ({ product }: ProducProps) => {
                   <span className="text-3xl font-bold">{product.price} CFA</span>
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${product.stock.status === "disponible"
-                        ? "bg-green-400 text-green-900"
-                        : "bg-orange-400 text-orange-900"
+                      ? "bg-green-400 text-green-900"
+                      : "bg-orange-400 text-orange-900"
                       }`}
                   >
                     {product.stock.status}
@@ -170,11 +176,10 @@ const CommandForm = ({ product }: ProducProps) => {
                       type="number"
                       id="quantity"
                       name="quantity"
-                      min={1}
                       max={product.stock.quantity}
                       value={quantity}
                       onChange={(e) =>
-                        setQuantity(Math.min(product.stock.quantity, Math.max(1, Number(e.target.value))))
+                        setQuantity(Number(e.target.value))
                       }
                       required
                       className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition shadow-sm"

@@ -12,8 +12,7 @@ import SchoolCarieer from "./components/school/SchoolCarieer";
 import SkillSender from "./components/skills/SkillSender";
 import Title from "./components/Title";
 
-export default function Home() {
-
+export default async function Home() {
   return (
     <>
       <Navbar 
