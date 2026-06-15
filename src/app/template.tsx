@@ -5,7 +5,6 @@ interface Props {
 
 const Template = ({ children }: Props) => {
     return (
-      
         <div className="animate-fadeIn">
             {children}
         </div>

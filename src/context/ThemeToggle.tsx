@@ -39,7 +39,6 @@ const ThemeToggle = () => {
       ) : (
         <CardMotion delay={0.2}>
           <BsLightbulbFill
-         
             className="text-yellow-400 text-3xl md:text-4xl cursor-pointer "
           />
         </CardMotion>
