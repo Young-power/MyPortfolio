@@ -65,7 +65,7 @@ export default function AnimatedCircle({ years, showText }: Props) {
         />
       </PieChart>
       <div className="absolute text-muted-foreground dark:text-white text-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-lg font-bold ">
-        + {count}{ showText && " mois"}
+        + {count}{ showText && " ANS"}
       </div>
     </div>
   );

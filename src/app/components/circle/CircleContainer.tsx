@@ -7,7 +7,7 @@ const CircleContainer = () => {
             
             <div className='flex flex-col justify-center items-center space-y-3 text-lg md:text-xl font-semibold italic'>
                 <p className=' text-muted-foreground dark:text-white font-bold '>Année d&apos;Expériences</p>
-                <AnimateCircle years={9} showText={true} />
+                <AnimateCircle years={2} showText={true} />
             </div>
 
             <div className='flex flex-col justify-center items-center space-y-3 md:text-xl font-semibold italic'>
